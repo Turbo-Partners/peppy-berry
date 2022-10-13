@@ -1,0 +1,248 @@
+{% style %}
+.background-a{
+    background-color: #fff;
+    background-size: cover;
+
+    padding: 4rem;
+}
+
+.container-contents-a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5rem;
+
+    gap: 5rem;
+}
+
+.container-contents-a .thumb-videos-a{
+    display: flex;
+    flex-direction: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6rem;
+}
+
+.container-contents-a .thumb-videos-a .thumb-box-a{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    border: 1px solid rgba(0, 0, 0, 0.200);
+    border-radius: 2rem;
+
+    height: 58rem;
+    width: 30.1rem;
+    
+    line-height:1.4;
+    
+}
+
+.container-contents-a .thumb-videos-a .thumb-box-a video{
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+    
+    border-radius: 2rem 2rem 0 0;
+}
+
+.title-a-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-a{
+    font-size: 3.5rem;
+    color: #000;
+    font-weight: bold;
+
+}
+
+
+.thumb-videos-a span{
+    color: #c7d40d;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+}
+
+.thumb-videos-a p{
+    color: #000;
+    font-weight: 300;
+    font-size: 1.5rem;
+
+    margin-top: 0.5rem;
+}
+
+.box2-avaliacoes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2rem;
+}
+
+.box2-avaliacoes .images-box-avaliacoes{
+    display: flex;
+    gap: 2rem;
+}
+
+.principal_title_a{
+    font-size: 2rem;
+    color: #853dd9; 
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1050px) {
+    .container-contents-a .thumb-videos-a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 2rem;
+    }
+
+    .container-contents-a{
+        padding: 0rem;
+    }
+
+    .box2-avaliacoes .images-box-avaliacoes{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .title-a-box{
+        text-align: center;
+        margin-top: 3.5rem;
+    }
+
+    .title-a{
+        line-height: 1.2;
+        font-size: 2.5rem;
+        text-align: center;
+    }
+
+    .principal_title_a{
+        font-size: 1.5rem;
+    }
+}
+
+{% endstyle %}
+
+<a name="avaliacoes">
+<div class="background-a">
+    <div class="container-contents-a">
+        <div class= "title-a-box">
+            <span class="principal_title_a">ESCOLHA NÚMERO 1 PARA SUA BEBIDA ENÉRGETICA</span>
+            <span class="title-a">Milhares de clientes satisfeitos</span>
+        </div>
+        <div class="thumb-videos-a">
+            <div class="thumb-box-a">
+                <video autoplay="true" muted loop id="video-by-turbo__video">
+                    <source type="video/mp4" src="{{ 'depoimento_1-transcode.mp4' | asset_url }}">
+                </video>
+                <div class="documentation" style="padding: 1rem;">
+                    <span>⭐⭐⭐⭐⭐</span>
+                    <span style="color: #000; font-size: 2rem;">"Cuidado!! Alto risco de se apaixonar…"</span>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11.076" height="13.537" viewBox="0 0 11.076 13.537">
+                            <path id="Icon_metro-security" data-name="Icon metro-security" d="M11.965,3.856,6.427,6.317v3.692a7.654,7.654,0,0,0,5.538,7.384A7.654,7.654,0,0,0,17.5,10.009V6.317Zm0,6.762h4.307a6.574,6.574,0,0,1-4.307,5.5V10.625H7.657V7.117L11.965,5.2v5.415Z" transform="translate(-6.427 -3.856)" fill="#c7ca00"/>
+                        </svg>   
+                        COMPRADOR VERIFICADO
+                    </span>
+                    <p>Muiiito gostoso! O gostinho de açaí com banana é maravilhoso e me da toda a energia que preciso pros meus treinos.</p>   
+                    <p style="font-size: 2rem; font-weight: bold; margin-top: 4rem; ">Veronica Almeida</p>   
+                </div>
+            </div>
+            <div class="thumb-box-a">
+                <video autoplay="true" muted loop id="video-by-turbo__video">
+                    <source type="video/mp4" src="{{ 'depoimento_4-transcode.mp4' | asset_url }}">
+                </video>
+                <div class="documentation" style="padding: 1rem;">
+                    <span style="color: #93286e">⭐⭐⭐⭐⭐</span>
+                    <span style="color: #000; font-size: 2rem;">"O melhor suplemento!"</span>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11.076" height="13.537" viewBox="0 0 11.076 13.537">
+                            <path id="Icon_metro-security" data-name="Icon metro-security" d="M11.965,3.856,6.427,6.317v3.692a7.654,7.654,0,0,0,5.538,7.384A7.654,7.654,0,0,0,17.5,10.009V6.317Zm0,6.762h4.307a6.574,6.574,0,0,1-4.307,5.5V10.625H7.657V7.117L11.965,5.2v5.415Z" transform="translate(-6.427 -3.856)" fill="#c7ca00"/>
+                        </svg>   
+                        COMPRADOR VERIFICADO
+                    </span>
+                    <p>Já testei todo tipo de suplementos, mas todos me davam algum tipo de problema: ansiedade, taquicardia, refluxo... Até que achei o Pré Move, muito saboroso e me da toda disposição que preciso pro dia a dia!</p>   
+                    <p style="font-size: 2rem; font-weight: bold; ">Rodrigo Queiroz</p>   
+                </div>
+            </div>
+            <div class="thumb-box-a">
+                <video autoplay="true" muted loop id="video-by-turbo__video">
+                    <source type="video/mp4" src="{{ 'depoimento_3-transcode.mp4' | asset_url }}">
+                </video>
+                <div class="documentation" style="padding: 1rem;">          
+                    <span style="color: #93286e">⭐⭐⭐⭐⭐</span>
+                    <span style="color: #000; font-size: 2rem;">"Não imaginei que pudesse amar tanto um produto"</span>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="11.076" height="13.537" viewBox="0 0 11.076 13.537">
+                            <path id="Icon_metro-security" data-name="Icon metro-security" d="M11.965,3.856,6.427,6.317v3.692a7.654,7.654,0,0,0,5.538,7.384A7.654,7.654,0,0,0,17.5,10.009V6.317Zm0,6.762h4.307a6.574,6.574,0,0,1-4.307,5.5V10.625H7.657V7.117L11.965,5.2v5.415Z" transform="translate(-6.427 -3.856)" fill="#c7ca00"/>
+                        </svg>   
+                        COMPRADOR VERIFICADO
+                    </span>
+                    <p>Essa latinha roxa me cativou... sou apaixonada por esse produto e eles se tornou indispensável para o meu dia a dia.</p>   
+                    <p style="font-size: 2rem; font-weight: bold; ">Isabella Motta</p>   
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box2-avaliacoes">
+        <div class= "title-a-box">
+            <span class="title-a" style="font-size: 4.2rem;">Mais Avaliações</span>
+        </div>
+        <div class="images-box-avaliacoes">
+            <img style=" border-radius: 2px;" src="{{ section.settings.avaliacoesplus1 | image_url}}" width="auto" height="auto" loading="lazy">
+            <img style=" border-radius: 2px;" src="{{ section.settings.avaliacoesplus2 | image_url}}" width="auto" height="auto" loading="lazy">
+            <img style=" border-radius: 2px;" src="{{ section.settings.avaliacoesplus3 | image_url}}" width="auto" height="auto" loading="lazy">
+        </div>
+    </div>
+</div>
+</a>
+
+{% schema %}
+{
+    "name": "Avaliações",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "avaliacoesplus1",
+            "label": "Avaliação 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "avaliacoesplus2",
+            "label": "Avaliação 2"
+        },
+        {
+            "type": "image_picker",
+            "id": "avaliacoesplus3",
+            "label": "Avaliação 3"
+        }
+    ],
+    "presets": [
+        {
+        "name": "Avaliações",
+        "category": "imagem"
+        }
+    ]
+}
+{% endschema %}

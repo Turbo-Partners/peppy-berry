@@ -1,0 +1,321 @@
+{% style %}
+.general_Footer{
+  background-image: url({{ section.settings.background_Footer | image_url }});
+  background-size: cover;
+  height: auto;
+
+  padding: 5rem;
+}
+
+.banner_Footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 3rem;
+}
+
+.banner_Footer .banner_Footer_Box1_content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  gap: 5rem;
+
+}
+
+.banner_Footer .banner_Footer_Box1_content .nav-list{
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+}
+
+.banner_Footer .banner_Footer_Box1_content .nav-list .nav-link-a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.banner_Footer .banner_Footer_Box1_content .nav-list .nav-link-a:hover{
+  color: #e99b00;
+  transition: 0.3s ease-out;
+}
+
+.banner_Footer .banner_Footer_Box1_content .images-combo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner_Footer_Box2_content{
+  display: flex;
+}
+
+.banner_Footer_Box2_content .turbo-content{
+  display: inline-flex;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+.banner_Footer_Box2_content .turbo-content span{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.banner_Footer_Box3_content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: #fff;
+}
+
+.turboLogo{
+  height: 4.5rem;
+  position: relative;
+  top: 15px;
+}
+
+.logoFInal{
+  height: 8rem;
+}
+
+.turboLogo_last{
+  height: 3rem;
+}
+
+.securityLogo{
+  height: 5rem;
+}
+
+.euRecicloLogo{
+  height: 8rem;
+}
+
+.pagar-me{
+  height: 15rem;
+}
+
+.content_mobile, .content-mobile-upside{
+  display:none;
+}
+
+  @media screen and (max-width: 1050px){
+    .banner_Footer_Box1_content{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      width: 40rem;
+    }
+
+    .content_mobile{
+      display:block;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 4rem;
+
+    }
+
+    .images-combo_mobile{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .banner_Footer_Box1_content .content-mobile-upside{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      gap: 1.5rem;
+
+    }
+
+    .banner_Footer_Box2_content .turbo-content span{
+      font-size: 2rem;
+      font-weight: bold;
+      color: #fff;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-list_mobile{
+      display: flex;
+      flex-direction: column;
+
+      gap: 3rem;
+    }
+
+    .nav-list_mobile .nav-link-a_mobile{
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .nav-list_mobile .nav-link-a_mobile:hover{
+      color: #e99b00;
+      transition: 0.3s ease-out;
+    }
+
+    .banner_Footer_Box3_content p{
+      color: #fff;
+      font-size: 1.3rem;
+    } 
+    
+    .logoFInal_mobile{
+      height: 8rem;
+    }
+
+    .securityLogo_mobile{
+      height: 5rem;
+    }
+
+    .euRecicloLogo_mobile{
+      height: 7rem;
+      margin-left: -2rem;
+    }
+
+    .pagar-me_mobile{
+      height: 8rem;
+    }
+
+    .content-mobile-upside, .nav-list-footer_mobile, .nav-list_mobile,
+    .nav-link-a_mobile{
+      display: block;
+    }
+
+    .images-combo, .securityLogo, .euRecicloLogo, .pagar-me,
+    .banner__img_Footer, .nav-list-footer{
+      display: none;
+    }
+  }
+
+{% endstyle %}
+
+<div data-section-id="{{ section.background_Footer }}" class="general_Footer">
+    <div class="banner_Footer">
+      <div class="banner_Footer_Box1_content">
+        <div class="banner__img_Footer"> 
+            <img class="logoFInal" src="{{ section.settings.logoFinal_Footer | image_url }}" width="auto" height="auto" loading="lazy">
+        </div>
+        <div class="nav-list-footer">
+          <ul class="nav-list">
+            {% for link in section.settings.menu-footer.links %}
+              <a class="nav-link-a" href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="images-combo">
+          <a href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fpeppyberry.com.br%2F&hl=pt_BR&_ga=2.116323206.141856907.1663584997-96693424.1663197366">
+            <img class="securityLogo" src="{{ section.settings.securityLogo_Footer | image_url }}" width="auto" height="auto" loading="lazy">
+          </a>
+          <img class="euRecicloLogo" src="{{ section.settings.recycle_Footer | image_url }}" width="auto" height="auto" loading="lazy">
+        </div>
+        <div>
+          <img class="pagar-me" src="{{ section.settings.pagarMe_Footer | image_url }}" width="auto" height="auto" loading="lazy">
+        </div>
+        {% comment %} MOBILE {% endcomment %}
+        <div class="content-mobile-upside">
+          <div class="banner__img_Footer_mobile"> 
+              <img class="logoFInal_mobile" src="{{ section.settings.logoFinal_Footer | image_url }}" width="auto" height="auto" loading="lazy">
+          </div>
+          <div class="nav-list-footer_mobile">
+            <ul class="nav-list_mobile">
+              {% for link in section.settings.menu-footer.links %}
+                <a class="nav-link-a_mobile" href="{{ link.url }}">
+                  {{ link.title }}
+                </a>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="content_mobile">
+          <div class="images-combo_mobile">
+            <a href="https://transparencyreport.google.com/safe-browsing/search?url=https:%2F%2Fpeppyberry.com.br%2F&hl=pt_BR&_ga=2.116323206.141856907.1663584997-96693424.1663197366">
+              <img class="securityLogo_mobile" src="{{ section.settings.securityLogo_Footer | image_url }}" width="auto" height="auto" loading="lazy">
+            </a>
+            <img class="euRecicloLogo_mobile" src="{{ section.settings.recycle_Footer | image_url }}" width="auto" height="auto" loading="lazy">
+          </div>
+          <div>
+            <img class="pagar-me_mobile" src="{{ section.settings.pagarMe_Footer | image_url }}" width="auto" height="auto" loading="lazy">
+          </div>
+        </div>
+      </div>
+      {% comment %} END MOBILE {% endcomment %}
+      <div class="banner_Footer_Box2_content">
+        <div class="turbo-content">
+          <span >Acelerada pela <a href="https://turbopartners.com.br/?_ga=2.173531043.141856907.1663584997-96693424.1663197366">
+            <img class="turboLogo" src="{{ section.settings.turboLogo_Footer | image_url }}" width="auto" height="auto" loading="lazy">
+          </a></span>
+        </div>
+      </div>
+      <div class="banner_Footer_Box3_content">
+          <p>Peppy Berry 2022 © Made by Turbo Partners</p>
+          <img class="turboLogo_last" src="{{ section.settings.turboLogo_Footer | image_url }}" width="auto" height="auto" loading="lazy">
+      </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name":  "Décima Terceira Section",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background_Footer",
+          "label": "Background"
+        },
+        {
+          "type": "image_picker",
+          "id": "logoFinal_Footer",
+          "label": "Logo Peppy"
+        },
+        {
+          "type": "link_list",
+          "id": "menu-footer",
+          "default": "footer",
+          "label": "Footer Menu"
+        },
+        {
+          "type": "image_picker",
+          "id": "securityLogo_Footer",
+          "label": "Security Peppy"
+        },
+        {
+          "type": "image_picker",
+          "id": "recycle_Footer",
+          "label": "Recycle Peppy"
+        },
+        {
+          "type": "image_picker",
+          "id": "pagarMe_Footer",
+          "label": "PagarMe Peppy"
+        },
+        {
+          "type": "image_picker",
+          "id": "turboLogo_Footer",
+          "label": "Logo Turbo"
+        }
+    ],
+    "presets": [
+        {
+          "name": "Footer by Turbo",
+          "category": "imagem"
+        }
+      ]
+}
+{% endschema %}

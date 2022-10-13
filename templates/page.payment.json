@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "payment-policy-by-turbo",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

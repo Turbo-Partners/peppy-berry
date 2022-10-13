@@ -1,0 +1,93 @@
+<style type="text/css">
+    .background-RE{
+        background-image: url({{ section.settings.background-PP | image_url }});
+        background-size: cover; 
+        background-position: center;
+
+        height: auto;
+        padding: 5rem;
+
+        margin-top: -130px;
+    }
+
+    .RE-container-p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 7rem;
+
+        margin-top: 10rem;
+    }
+
+    .pm-payment{
+        height: 30rem;
+    }
+
+    .title-pp{
+        font-size: 4rem; 
+        color: #fff; 
+        font-weight: bold
+    }
+
+    @media (max-width: 1050px){
+        .RE-container-p{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+    
+            padding: 0rem;
+            margin-top: 15rem;
+        }
+
+        .pm-payment{
+            height: 20rem;
+        }
+
+        .title-pp{
+            font-size: 2.5rem; 
+        }
+    }
+
+</style>
+
+<div class="background-RE">
+    <div class="RE-container-p" >
+        <div class="RE-title">
+            <span class="title-pp" >Política de Pagamento</span>
+            <p style="color: #fff;">Utilizamos a plataforma <a style="text-decoration: none; color: #e99b00;" href="https://pagar.me/?_ga=2.263600140.1474295243.1664291335-1349357501.1664045795">Pagar.me</a> para maior
+            segurança dos nossos clientes, aceitamos a maioria das bandeiras de cartão.</p>
+            <p style="color: #fff;">Pagamentos via Cartão de crédito em até 3x sem juros e boleto bancário (à vista).</p>
+        </div>
+        <div>
+            <img class="pm-payment" src="{{ section.settings.pagar-me-payment | image_url }}" width="" height="" loading="lazy">
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "RE Policy",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "background-PP",
+            "label": "Background"
+        },
+        {
+            "type": "image_picker",
+            "id": "pagar-me-payment",
+            "label": "Pagar-me"
+        }
+    ],
+    "presets": [
+        {
+        "name": "RE Policy",
+        "category": "imagem"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,124 @@
+{% style %}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.headerP-container{
+    background-color: #853dd9;
+    background-size: cover;
+
+    height: 9rem;
+
+    margin-top: 5rem;
+}
+
+.headerP-contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.headerP-contents .img_box{
+    margin-top: 2rem;
+}
+
+.headerP-contents .img_box{
+    margin-top: 2rem;
+}
+
+.navbar--blockP{
+    display: flex;
+}
+
+.navbar--blockP .nav--listP {
+    margin-top: 2.5rem;
+
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar--blockP .nav--listP a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+@media screen and (max-width: 1050px){
+    .headerP-container{
+        background-color: transparent;
+
+        position: sticky;
+        z-index: 15;
+    }
+
+    .headerP-contents {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar--blockP .nav--listP {
+        display: none;
+    }
+
+    .image--block{
+        height: 4rem;
+    }
+}
+
+{% endstyle %}
+
+<header class="headerP-container">
+    <div class="headerP-contents">
+        <div class="img_box">
+            <img class="image--block" src="{{ section.settings.logo | image_url }}" height="50" width="auto" loading="lazy">
+        </div>
+        <nav class="navbar--blockP">
+            <ul class="nav--listP">
+                {% for link in section.settings.menu-product.links %}
+                    {% if link.title == "Modo de Preparo" %}    
+                        <a href="{{ link.url }}#mododepreparo">
+                            {{ link.title }}
+                        </a>
+                    {% endif %}
+                    {% if link.title == "Diferenciais" %}    
+                        <a href="{{ link.url }}#diferenciais">
+                            {{ link.title }}
+                        </a>
+                    {% endif %}
+                    {% if link.title == "Ingredientes" %}    
+                        <a href="{{ link.url }}#maisingredientes">
+                            {{ link.title }}
+                        </a>
+                    {% endif %}
+                    {% if link.title == "Avaliações" %}    
+                        <a href="{{ link.url }}#avaliacoes">
+                            {{ link.title }}
+                        </a>
+                    {% endif %}
+                {% endfor %}               
+            </ul>
+        </nav>           
+    </div>
+</header>
+
+{% schema %}
+{
+    "name": "Header Product",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "logo",
+            "label":" Logo"
+        },
+        {
+            "type": "link_list",
+            "id": "menu-product",
+            "label": "Menu Product"
+        }
+    ]
+
+}
+{% endschema %}

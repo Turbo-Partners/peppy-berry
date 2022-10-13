@@ -1,0 +1,64 @@
+<style>
+    .background_garantia{
+        background-color: #f9f5ff;
+        background-size: cover;
+
+        padding: 5rem;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .background_garantia .spanset_one{
+        font-size: 2rem;
+        color: #853dd9;
+        font-weight: bold;
+    }
+
+    .background_garantia .spanset_mobile{
+        font-size: 3.5rem;
+        color: #000;
+        font-weight: bold;
+    }
+
+    @media screen and (max-width: 1050px) {
+        .background_garantia .spanset_one{
+            font-size: 1.5rem;
+        }
+        .background_garantia p{
+            max-width: 300px;
+        }
+
+        .background_garantia .spanset_mobile{
+            font-size: 2.5rem;
+            text-align: center;
+            line-height: 1;
+        }
+    }
+
+</style>
+
+<div class="background_garantia">
+    <span class="spanset_one">EXPERIMENTE SEM RISCO.</span>
+    <span class="spanset_mobile">Garantimos seu dinheiro de volta</span>
+    <p style="width: 60rem; text-align: center; font-weight: 300;">Se em até 7 dias do recebimento do produto você não estiver satisfeito,
+    devolvemos todo o seu dinheiro. Basta entrar em contato solicitando o cancelamento e devolução do produto.
+    Zero questionamentos ou burocracia.</p>
+</div>
+
+{% schema %}
+{
+    "name": "Garantia",
+    "tag": "section",
+    "class": "section",
+    "settings": [],
+    "presets": [
+        {
+        "name": "Garantia",
+        "category": "texto"
+        }
+    ]
+}
+{% endschema %}

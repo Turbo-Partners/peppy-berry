@@ -1,0 +1,297 @@
+{% style %}
+.general_q{
+  background-image: url({{ section.settings.background_q | image_url }});
+  background-size: cover;
+  height: auto;
+  margin-top: -0.9rem;
+
+  padding: 7rem;
+}
+
+.banner_q{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner_q .banner__content_q{
+    line-height: 1.5;   
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7rem;
+}
+
+.banner_q .banner__content_q .first__content_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15rem;
+   
+}
+
+.banner_q .banner__content_q .first__content_container .InfosContent{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.banner_q .banner__content_q .sec2q {
+    font-size: 1.8rem;
+    color:#fff;
+}
+
+.banner_q .banner__content_q .second__content_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10rem;
+}
+
+.banner_q .banner__content_q .second__content_container .SecondInfoContent {
+    width: 45rem;
+}
+
+.model1q{
+  border-radius: 2rem;
+}
+
+.banner__content_q .bttn_q{
+    position: relative;
+    left: -30px;
+    cursor: pointer;
+    height: 8rem;
+}
+
+.banner_q .banner__content_q .title_q{
+    height: 7rem;
+}
+
+.banner_q .banner__content_q .title_q2{
+    height: 5rem;
+}
+
+
+.footer_q{
+  margin-top: -0.5rem;
+  height: 0.7rem;
+  background-color: #9f82b3;
+}
+
+.model_futv_mobile{
+  display: none;
+}
+
+  @media screen and (max-width: 1050px){
+    .banner_q{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner_q .banner__content_q .second__content_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      gap: 10rem;
+    }
+
+    .banner_q .banner__content_q{
+      line-height: 1.5;   
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      gap: 5rem;
+    }
+
+    .banner_q .banner__content_q .first__content_container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      gap: 15rem;
+   
+    }
+
+    .model_futv_mobile{
+      display: block;
+      height: 22rem;
+
+      margin-top: -4rem;
+      border-radius: 2rem 2rem 0 0;
+
+      box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.500);
+    }
+
+    .banner_q .banner__content_q .title_q{
+      height: 5.2rem;
+    }
+
+    .banner_q .banner__content_q .title_q2{
+      height: 3.7rem;
+    }
+
+    .banner_q .banner__content_q .first__content_container .InfosContent{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .banner_q .banner__content_q .first__content_container .InfosContent .content_1{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 34rem;
+
+      text-align: center;
+    }
+
+    .banner_q .banner__content_q .second__content_container .SecondInfoContent {
+      width: 34rem;
+      text-align: center;
+    }
+
+    .banner__img_q{
+      margin-top: -7rem;
+    }
+
+    .model1q{
+      height: 49.5rem;
+      border-radius: 0 0 2rem 2rem;
+
+      box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.500);
+    }
+
+    .banner__content_q .bttn_q{
+      position: relative;
+      left: 5px;
+      cursor: pointer;
+      height: 8rem;
+    }
+  }
+
+{% endstyle %}
+
+<a name="quandotomar">
+<div data-section-id="{{ section.background_q }}" class="general_q">
+    <div class="banner_q">
+      <div class="banner__content_q ">
+        <div class="first__content_container">
+          <div class="InfosContent">        
+            <div class="content_1">
+              <p class="sec2q">QUANDO TOMAR</p>
+              <img class="title_q" src="{{ section.settings.title_img_q | image_url }}" width="auto" height="auto" loading="lazy">
+              <p class="sec2q">{{ section.settings.description_q }}</p>
+            </div>
+            <div class="content_1">
+              <img class="title_q2" src="{{ section.settings.title_img_q2 | image_url }}" width="auto" height="auto" loading="lazy">
+              <p class="sec2q">{{ section.settings.description_q2 }}</p>
+            </div>
+          </div>
+          <div class="banner__img_q">
+              <img class="model1" src="{{ section.settings.banner_img_q | image_url }}" width="650" height="auto" loading="lazy">
+              <img class="model_futv_mobile" src="{{ section.settings.banner_img_q | image_url }}" width="auto" height="auto" loading="lazy">
+          </div>
+        </div>
+        <div class="second__content_container">
+          <div class="banner__img_q">
+              <img class="model1q" src="{{ section.settings.banner_img_q2 | image_url }}" width="auto" height="700" loading="lazy">
+          </div>
+          <div class="SecondInfoContent">
+            <img class="title_q" src="{{ section.settings.title_img_q3 | image_url }}" width="auto" height="auto" loading="lazy">
+            <p class="sec2q">{{ section.settings.description_q3 }}</p>
+            <a href="{{ section.settings.button_url }}"><img class="bttn_q" src="{{ section.settings.button__image_q | image_url }}" width="auto" height="auto" loading="lazy"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<hr class="footer_q" />
+</a>
+
+{% schema %}
+{
+    "name":  "Quinta Section",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background_q",
+          "label": "Background"
+        },
+        {
+          "type": "image_picker",
+          "id": "title_img_q",
+          "label": "Titulo Principal"
+        },
+        {
+          "type": "text",
+          "id": "description_q",
+          "label": "Descrição"
+        },
+        {
+          "type": "image_picker",
+          "id": "title_img_q2",
+          "label": "Titulo Principal"
+        },
+        {
+          "type": "text",
+          "id": "description_q2",
+          "label": "Descrição"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_img_q",
+          "label": "Foto"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_img_q2",
+          "label": "Foto"
+        },
+        {
+          "type": "image_picker",
+          "id": "title_img_q3",
+          "label": "Titulo Principal"
+        },
+        {
+          "type": "text",
+          "id": "description_q3",
+          "label": "Descrição"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Link do Botão"
+        },
+        {
+          "type": "image_picker",
+          "id": "button__image_q",
+          "label": "Botão"
+        }
+    ],
+    "presets": [
+        {
+          "name": "Quando tomar",
+          "category": "imagem"
+        }
+      ]
+}
+
+{% endschema %}

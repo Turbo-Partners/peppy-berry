@@ -1,0 +1,544 @@
+{% style %}
+
+.general_product_section{
+  height: auto;
+
+  padding: 4rem;
+}
+
+.content_geral_box{
+/*   display: flex;
+  justify-content: center;
+
+  gap: 4rem; */
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 4rem;
+
+  padding: 4rem;
+}
+
+/* .content_geral_box .InfosBoxContent {
+  display: grid;
+  grid-template-columns: auto auto;
+} */
+
+.More_info_desc{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: -3rem;
+  font-weight: bold;
+  color: #44236b;
+  font-size: 1.7rem;
+}
+
+.Content_title_box .desc{
+  font-size: 1.7rem;
+  font-weight: 300;
+  color: #44236b;
+  margin-bottom: 3.5rem;
+}
+
+.Content_title_box .desc span{
+  font-weight: bold;
+}
+
+.Waitlist_box{
+  height: 20rem;
+  width: 56rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #733cb3;
+  border-radius: 5rem;
+
+  margin-top: 2rem;
+
+}
+
+.Waitlist_box p{
+  text-align: center;
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+.Waitlist_box .button_box_waitlist{
+  height: 5rem;
+  width: 44rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -1rem;
+  cursor: pointer;
+
+  gap: 1rem;
+
+  padding: 3rem 0;
+  border-radius: 5rem;
+
+  background-image: linear-gradient(90deg, #f7b942, #e78700);
+  box-shadow: 1px 3px 5px -1px rgb(48 15 87 / 57%);
+
+  text-decoration: none;
+  transition: 0.7s ease-in-out;
+
+}
+
+.Waitlist_box .button_box_waitlist span{
+  font-weight: bold;
+  font-size: 3.2rem;
+  color: #fff;
+}
+
+.photoProduct{
+  height: 70rem;
+  border-radius: 1rem;
+}
+
+.photoblock_waitlist{
+  height: 8rem;
+}
+
+.l--pop-up-content {
+  position: fixed;
+  visibility: hidden;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 100;
+  width: 665px;
+  height: 570px;
+  margin: auto;
+
+  background-color: #452683;
+  box-shadow: 0px 10px 40px 500px rgba(0, 0, 0, 0.700);
+  border-radius: 2rem;
+  
+  transition: 0.5s ease-out;
+    
+}
+
+.l-x-sign {
+    position: absolute;
+    left: auto;
+    top: 0%;
+    right: 0%;
+    bottom: auto;
+    padding: 12px 15px 15px;
+    cursor: pointer;
+}
+
+.c-title-popup1 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 0px;
+    padding-top: 6px;
+    padding-right: 50px;
+    padding-left: 50px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.w-form {
+    /* margin: 0 0 15px; */
+    padding: 0 6rem;
+}
+
+.c-title-popup2 {
+    padding-bottom: 5px;
+    color: #e78700;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.text-field {
+    padding-right: 12px;
+    border-radius: 20px;
+    background-color: rgba(133, 61, 217, 0.18);
+    box-shadow: 3px 3px 3px 0 rgb(0 0 0 / 61%);
+}
+.w-input, .w-select {
+    display: block;
+    width: 100%;
+    height: 38px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+.c-title-popup2.is--padding-top {
+    padding-top: 10px;
+}
+
+.text-field {
+    padding-right: 12px;
+    border-radius: 20px;
+    background-color: rgba(133, 61, 217, 0.18);
+    box-shadow: 3px 3px 3px 0 rgb(0 0 0 / 61%);
+}
+.w-input, .w-select {
+    display: block;
+    width: 100%;
+    height: 38px;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+.text-field-phone {
+    padding-right: 12px;
+    border-radius: 20px;
+    background-color: rgba(133, 61, 217, 0.18);
+    box-shadow: 3px 3px 3px 0 rgb(0 0 0 / 61%);
+}
+
+
+input.w-button {
+    -webkit-appearance: button;
+}
+.l-submit-button {
+    position: static;
+    display: block;
+    margin-top: 23px;
+    margin-right: 180px;
+    margin-left: 180px;
+    padding-top: 10px;
+    padding-right: 60px;
+    padding-left: 60px;
+    border-radius: 20px;
+    background-color: #3c1668;
+    background-image: linear-gradient(267deg, #f7b942, #e78700);
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+
+    border-radius: 2rem;
+}
+.w-button {
+    margin: 1 auto;
+    padding: 9px 15px;
+    width: 20rem;
+    background-color: #3898EC;
+    color: white;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+
+.w-form-done {
+    display: none;
+    padding: 20px;
+    text-align: center;
+    background-color: #dddddd;
+}
+
+.w-form-fail {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffdede;
+}
+
+
+.open {
+  visibility: visible;
+}
+
+.close {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1050px){
+  .general_product_section{
+    height: auto;
+    padding: 0rem;
+  }
+
+  .content_geral_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4rem;
+  }
+
+  .supreme-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Waitlist_box{
+    height: 13rem;
+    width: 30rem;
+  }
+
+  .Waitlist_box .button_box_waitlist{
+    height: 4rem;
+    width: 25rem;
+    padding: 0;
+  }
+
+  .Waitlist_box .button_box_waitlist span{
+    font-size: 1.5rem;
+  }
+
+  .Waitlist_box p{
+    font-size: 1.3rem;
+  }
+
+  .content_geral_box .InfosBoxContent {
+    padding: 3rem;
+    max-width: 400px;
+  }
+
+  .l--pop-up-content{
+    width: 300px;
+    height:400px;
+  }
+
+  .c-title-popup1{
+    font-size: 1.5rem;
+  }
+
+  .c-title-popup2{
+    font-size: 1.3rem;
+  }
+
+  .w-form {
+    /* margin: 0 0 15px; */
+    padding: 0 2rem;
+  }
+
+  .l-submit-button{
+    margin-top: 2rem;
+    margin-left: 2.7rem;
+  }
+
+  .w-button{
+    padding: 0.5rem;
+  }
+
+  .w-input, .w-select {
+    height: 3rem;
+    padding: 8px 12px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    line-height: 0;
+    color: #333333;
+    background-color: #ffffff;
+
+  }
+
+  .photoProduct{
+    margin-top: -14rem;
+    height: 50rem;
+    width: 100vw;
+
+    border-radius: 0;
+
+    object-fit: cover;
+  }
+
+  .Content_title_box .desc{
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: #44236b;
+    max-width: 350px;
+  }
+
+  .More_info_desc{
+    font-weight: bold;
+    color: #44236b;
+    font-size: 1.7rem;
+    line-height: 1.2;
+    display: flex;
+    gap: 1rem;
+    margin-top: -1.5rem;
+  }
+
+  .More_info_desc svg{
+    font-size: 5rem;
+  }
+
+  .photoblock_waitlist{
+    height: 6rem;
+  }
+}
+
+{% endstyle %}
+
+<div class="general_product_section">
+    <div class="content_geral_box">
+      <div class="content_image_box">
+          <img class="photoProduct" src="{{ section.settings.product_image | image_url }}" width="auto" height="auto" loading="lazy" />
+      </div>
+      <div class="InfosBoxContent">
+          <div class="Content_title_box">
+              {% render 'premovepurple' %}
+              <div>
+                <span>⭐⭐⭐⭐⭐(+199 reviews)</span>
+              </div>
+              <p class="desc"><span>O Pré-move é um blend energético em pó a base de açaí</span> e com ingredientes estrategicamente selecionados para te dar mais energia,
+              disposição e foco nas atividades do seu dia.</p>
+          </div>
+          <div class="More_infos">
+              <div>  
+                <span class="More_info_desc">
+                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Grupo_4" data-name="Grupo 4" width="22.803" height="20" viewBox="0 0 22.803 20">
+                        <circle id="Elipse_7" data-name="Elipse 7" cx="10" cy="10" r="10" fill="#b5eb21"/>
+                        <path id="Icon_awesome-check" data-name="Icon awesome-check" d="M6.622,18.83.286,12.494a.975.975,0,0,1,0-1.379L1.664,9.737a.975.975,0,0,1,1.379,0L7.311,14l9.142-9.142a.975.975,0,0,1,1.379,0L19.21,6.241a.975.975,0,0,1,0,1.379L8,18.83A.975.975,0,0,1,6.622,18.83Z" transform="translate(3.308 -2.372)" fill="#853dd9"/>
+                    </svg>
+                    <p>100% Natural, livre de glúten e zero açúcar</p>
+                </span>
+              </div>
+              <div>
+              <span class="More_info_desc">
+                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Grupo_4" data-name="Grupo 4" width="22.803" height="20" viewBox="0 0 22.803 20">
+                      <circle id="Elipse_7" data-name="Elipse 7" cx="10" cy="10" r="10" fill="#b5eb21"/>
+                      <path id="Icon_awesome-check" data-name="Icon awesome-check" d="M6.622,18.83.286,12.494a.975.975,0,0,1,0-1.379L1.664,9.737a.975.975,0,0,1,1.379,0L7.311,14l9.142-9.142a.975.975,0,0,1,1.379,0L19.21,6.241a.975.975,0,0,1,0,1.379L8,18.83A.975.975,0,0,1,6.622,18.83Z" transform="translate(3.308 -2.372)" fill="#853dd9"/>
+                  </svg>
+                  <p>Sabor Exclusivo Açaí com Banana</p>
+              </span>
+              </div>
+              <div>
+              <span class="More_info_desc">
+                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Grupo_4" data-name="Grupo 4" width="22.803" height="20" viewBox="0 0 22.803 20">
+                      <circle id="Elipse_7" data-name="Elipse 7" cx="10" cy="10" r="10" fill="#b5eb21"/>
+                      <path id="Icon_awesome-check" data-name="Icon awesome-check" d="M6.622,18.83.286,12.494a.975.975,0,0,1,0-1.379L1.664,9.737a.975.975,0,0,1,1.379,0L7.311,14l9.142-9.142a.975.975,0,0,1,1.379,0L19.21,6.241a.975.975,0,0,1,0,1.379L8,18.83A.975.975,0,0,1,6.622,18.83Z" transform="translate(3.308 -2.372)" fill="#853dd9"/>
+                  </svg>
+                  <p>Aumente sua Disposição sem o efeito rebote do café</p>
+              </span>
+            </div>
+          </div>
+          <div class="supreme-box">
+            <div class="Waitlist_box">
+              <a class="button_box_waitlist" onClick="showTheWaitlist()">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="14" viewBox="0 0 20.648 16.582">
+                  <defs>
+                    <linearGradient id="linear-gradient" y1="0.318" x2="1.161" y2="0.617" gradientUnits="objectBoundingBox">
+                      <stop offset="0" stop-color="#eb932c"/>
+                      <stop offset="1" stop-color="#853dd9"/>
+                    </linearGradient>
+                  </defs>
+                  <path id="Icon_awesome-angle-double-right" data-name="Icon awesome-angle-double-right" d="M12.077,15.918,5.032,22.963a1.238,1.238,0,0,1-1.756,0L2.105,21.792a1.238,1.238,0,0,1,0-1.756L7.1,15.042,2.105,10.049a1.238,1.238,0,0,1,0-1.756L3.271,7.112a1.238,1.238,0,0,1,1.756,0l7.045,7.045A1.24,1.24,0,0,1,12.077,15.918Zm9.946-1.761L14.978,7.112a1.238,1.238,0,0,0-1.756,0L12.051,8.282a1.238,1.238,0,0,0,0,1.756l4.994,4.994-4.994,4.994a1.238,1.238,0,0,0,0,1.756l1.171,1.171a1.238,1.238,0,0,0,1.756,0l7.045-7.045a1.232,1.232,0,0,0,0-1.751Z" transform="translate(-1.74 -6.746)" fill="url(#linear-gradient)"/>
+                </svg>
+                <span>Entre na Lista de Espera</span>
+              </a>
+                <p class="alert_product"><strong>Seja avisado</strong> e <strong>Ganhe</strong> um <strong>Cupom de Desconto</strong> quando voltar o estoque!</p> 
+            </div>
+          <div>
+            <img class="photoblock_waitlist" src="{{ section.settings.blockWL_image | image_url }}" width="auto" height="auto" loading="lazy" />
+          </div>
+      </div>
+      <div class="l--pop-up-content">
+        <div data-w-id="31fa44c0-3089-0255-b2d6-c1e36c5d2c67" class="l-x-sign" onClick="closeWaitlist()" style="height: 35px; width: 35px; border-radius: 50%; background-color:#733cb3; font-size: 2rem; color: #fff; font-weight: bold; display: flex; align-items: center; padding: 1rem;">X</div>
+        <h1 class="c-title-popup1">Entre na Lista de espera e Ganhe um Cupom de Desconto exclusivo!</h1>
+        <div class="l-formulario w-form">
+        {% form 'customer' %}
+          <form id="wf-form-Form" name="wf-form-Form" data-name="Form" action="https://usebasin.com/f/e0a4e5f73206" method="post" aria-label="Form">
+            <label for="name" class="c-title-popup2">Nome:</label>
+              <input type="text" class="text-field w-input" maxlength="256" name="name" data-name="Name" placeholder="" id="name">
+            <label for="email" class="c-title-popup2 is--padding-top">Endereço de email:</label>
+              <input type="email" class="text-field w-input" maxlength="256" name="email" data-name="Email" placeholder="" id="email" required="">
+            <label for="phone" class="c-title-popup2 is--padding-top">Celular ( DDD + número&nbsp;):</label>
+              <input type="tel" class="text-field-phone w-input" maxlength="256" name="phone" data-name="phone" placeholder="" id="phone" required="">
+              <input type="submit" data-wait="Aguarde..." value="Envie" class="l-submit-button w-button">
+          </form>
+        {% endform %}
+          <div class="w-form-done" tabindex="-1" role="region" aria-label="Form success">
+            <div>Obrigado! Nós recebemos suas infos e logo mais lhe enviaremos o cupom :)</div>
+          </div>
+          <div class="w-form-fail" tabindex="-1" role="region" aria-label="Form failure">
+            <div>Oops! Algo deu errado ao submeter suas informações. </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        
+        function showTheWaitlist() {
+          var btnOpen = document.querySelector('.button_box_waitlist');
+          console.log("🚀 ~ file: product-turbo.liquid ~ line 366 ~ showTheWaitlist ~ btnOpen", btnOpen)
+          var boxWaitlist = document.querySelector('.l--pop-up-content');
+          
+          if(boxWaitlist.classList.contains('open')) {
+            boxWaitlist.classList.remove('close')
+          } else{
+            boxWaitlist.classList.add('open')
+          }
+        }
+
+        function closeWaitlist() {
+          var btnClose = document.querySelector('.l--pop-up-content');
+
+          if(btnClose.classList.contains('close')) {
+            btnClose.classList.remove('open')
+          } else{
+            btnClose.classList.add('close')
+          }
+        }
+        
+      </script>
+    </div>
+    </div>
+</div>
+
+{% schema %}
+{
+  "name":  "Página do Produto",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Foto do produto"
+    },
+    {
+      "type": "image_picker",
+      "id": "blockWL_image",
+      "label": "Foto do produto"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Produto",
+      "category": "imagem"
+    }
+  ]
+}
+{% endschema %}

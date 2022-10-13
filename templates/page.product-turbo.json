@@ -1,0 +1,49 @@
+{
+  "sections": {
+    "ProductPage": {
+      "type": "product-turbo",
+      "settings": {
+        "backgroundc": "image_picker"
+      }
+    },
+    "introproduct-section": {
+      "type": "introproduct-by-turbo"
+    },
+    "mododepreparo-section": {
+      "type": "mododepreparo-by-turbo"
+    },
+    "compararprodutos-section": {
+      "type": "comparar"
+    },
+    "depoisdecomparar-section": {
+      "type": "postcompare"
+    },
+    "motivos-section": {
+      "type": "motivos-by-turbo"
+    },
+    "ingredientesnew-section": {
+      "type": "ingredientes-motivos"
+    },
+    "avaliacao-section": {
+      "type": "avaliacoes-by-turbo"
+    },
+    "garantia-section": {
+      "type": "garantia-by-turbo"
+    },
+    "finalfaq-section": {
+      "type": "finalfaq"
+    }
+  },
+  "order": [
+    "ProductPage",
+    "introproduct-section",
+    "mododepreparo-section",
+    "compararprodutos-section",
+    "depoisdecomparar-section",
+    "motivos-section",
+    "ingredientesnew-section",
+    "avaliacao-section",
+    "garantia-section",
+    "finalfaq-section"
+  ]
+}

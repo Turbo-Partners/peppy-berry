@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "primeira-section": {
+      "type": "banner-image-by-turbo"
+    },
+    "segunda-section": {
+      "type": "conheca-by-turbo"
+    },
+    "terceira-section": {
+      "type": "beneficios-by-turbo"
+    },
+    "quarta-section": {
+      "type": "ingredientes-by-turbo"
+    },
+    "quinta-section": {
+      "type": "quando-tomar-by-turbo"
+    },
+    "sexta-section": {
+      "type": "tabela-nutricional-by-turbo"
+    },
+    "setima-section": {
+      "type": "reviews-by-turbo"
+    },
+    "oitava-section": {
+      "type": "faq-by-turbo"
+    },
+    "nona-section": {
+      "type": "instagramsection-by-turbo"
+    },
+    "decima-section": {
+      "type": "newsletter-by-turbo"
+    }
+  },
+  "order": [
+    "primeira-section",
+    "segunda-section",
+    "terceira-section",
+    "quarta-section",
+    "quinta-section",
+    "sexta-section",
+    "setima-section",
+    "oitava-section",
+    "nona-section",
+    "decima-section"
+  ]
+}

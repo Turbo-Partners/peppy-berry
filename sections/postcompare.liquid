@@ -1,0 +1,164 @@
+{% style %}
+
+.background-pc{
+    background-image: url({{ section.settings.background_pc | image_url }});
+    background-size: cover;
+    background-position: center;
+
+    height: 700px;
+}
+
+.container-contents-pc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-contents-pc .title-pc{
+    margin-top: 10rem;
+}
+
+.title-pc-cont{
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.container-contents-pc .designing-pc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 2rem;
+}
+
+.container-contents-pc .designing-pc .phrase-pc{
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.5rem;
+}
+
+.container-contents-pc .designing-pc .phrase-pc b{
+    color: #c7d40d;
+    font-size: 2rem;
+}
+
+.container-contents-pc .designing-pc .rangebg{
+    height: 1.7rem;
+    width: 50rem;
+    background-color: #6a5eb7;
+    border-radius: 2rem;
+    /* margin-left: -5rem; */
+}
+
+.container-contents-pc .designing-pc .rangebg .rangeprincipal-rone{
+    background-color: #c7d40d;
+    border-radius: 2rem;
+    height: 1.7rem;
+    width: 47.5rem;
+}
+
+.container-contents-pc .designing-pc .rangebg .rangeprincipal-rtwo{
+    background-color: #c7d40d;
+    border-radius: 2rem;
+    height: 1.7rem;
+    width: 43.5rem;
+}
+
+.peppy_product_image_pc{
+    margin-top: 5rem;
+}
+
+@media screen and (max-width: 1050px){
+    .container-contents-pc .designing-pc{
+        margin-top: 5rem;
+
+        gap: 2rem;
+    }
+
+    .container-contents-pc .title-pc{
+        margin-top: 10rem;
+        text-align: center;
+        line-height: 1;
+    }
+
+    .peppy_product_image_pc{
+        height: 25rem;
+        margin-top: 10rem;   
+    }
+
+    .container-contents-pc .designing-pc .rangebg{
+        height: 1.7rem;
+        width: 30rem;
+        background-color: #6a5eb7;
+        border-radius: 2rem;
+        /* margin-left: -5rem; */
+    }
+
+    .container-contents-pc .designing-pc .rangebg .rangeprincipal-rone{
+        background-color: #c7d40d;
+        border-radius: 2rem;
+        height: 1.7rem;
+        width: 28.5rem;
+    }
+
+    .container-contents-pc .designing-pc .rangebg .rangeprincipal-rtwo{
+        background-color: #c7d40d;
+        border-radius: 2rem;
+        height: 1.7rem;
+        width: 26.1rem;
+    }
+}
+
+{% endstyle %}
+
+<div class="background-pc">
+    <div class="container-contents-pc">
+        <div class="title-pc">
+            <span class="title-pc-cont">Testado pela nossa comunidade!</span>
+        </div>
+        <div class="designing-pc">
+            <div class="designing-box">
+                <span class="phrase-pc"><b>95%</b> afirmam que o sabor é espetacular!</span>
+                <div class="rangebg"><div class="rangeprincipal-rone"></div></div>
+            </div>
+            <div class="designing-box">
+                <span class="phrase-pc"><b>87%</b> afirmam que o efeito é muito potente!</span>
+                <div class="rangebg"><div class="rangeprincipal-rtwo"></div></div>
+            </div>
+            <img class="peppy_product_image_pc" src="{{ section.settings.peppy_image_product_2 | image_url }}" width="" height="" loading="lazy">
+        </div>
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Depois de comparar",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "background_pc",
+            "label": "Background"
+        },
+        {
+            "type": "image_picker",
+            "id": "peppy_image_product_2",
+            "label": "Foto do Produto"
+        }
+    ],
+    "presets": [
+        {
+        "name": "Depois de comparar",
+        "category": "imagem"
+        }
+    ]
+}
+{% endschema %}

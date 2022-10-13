@@ -1,0 +1,226 @@
+{% style %}
+.general_R{
+  background-image: url({{ section.settings.background_R | image_url }});
+  background-size: cover;
+  height: auto;
+
+  padding: 12rem;
+}
+
+.banner__content_R{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner__content_R .card-review{
+  height: 65rem;
+  width: 35rem;
+  background-color: #f7e6f4;
+
+  border-radius: 5rem;
+
+  margin: 5rem 3rem;
+}
+
+.banner__content_R .card-review .card-review-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 3rem;
+}
+
+.box-content{
+  display: flex;
+}
+
+.name-review{
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #612ca7;
+}
+
+.modelR{
+  height: 17rem;
+}
+
+.descR{
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+  line-height: 24px;
+
+  text-align: center;
+}
+
+.footer_R{
+  height: 0.7rem;
+  background-color: #e99b00;
+}
+
+.card-review-content_mobile, .card-photo_mobile, .modelR_mobile, .name-review_mobile {
+  display: none;
+}
+
+  @media screen and (max-width: 1050px){
+    .modelR{
+      height: 12rem;
+    }
+
+    .box-content{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner__content_R .card-review{
+      height: 50rem;
+      width: 35rem;
+      background-color: #f7e6f4;
+
+      border-radius: 5rem;
+
+      margin: 5rem auto;
+    }
+
+    .banner__content_R .card-review .card-review-content{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      padding: 3rem;
+
+      gap: 3.5rem;
+    }
+
+    .banner__content_R .card-review .card-review-content .card-review-content_mobile{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      border-bottom: 1px solid rgba(0,0,0,0.300);
+      padding-bottom: 2rem;
+    }
+
+    .name-review_mobile{
+      font-weight: bold;
+      font-size: 2.5rem;
+      margin-bottom: 0px;
+      margin-left: 1.5rem;
+      color: #612ca7;
+    }
+
+    .descR{
+      margin-top: -1.5rem;
+    }
+
+    .modelR_mobile{
+      height: 10rem;
+    }
+
+    .card-review-content_mobile, .card-photo_mobile, .modelR_mobile, .name-review_mobile{
+      display: block;
+    }
+
+    .card-photo, .name-review{
+      display: none;
+    }
+  }
+
+{% endstyle %}
+
+<a name="reviews">
+<div data-section-id="{{ section.background_R }}" class="general_R">
+    <div class="banner_R">
+      <div class="banner__content_R ">
+        <div class="banner__img_R">
+          <img class="modelR" src="{{ section.settings.banner_img_R | image_url }}" width="auto" height="auto" loading="lazy">
+        </div>
+        <div class="box-content">
+          {% for block in section.blocks %}
+          <div class="card-review">
+            <div class="card-review-content">
+              <div class="card-review-content_mobile">
+                <div class="card-photo_mobile">
+                  <img class="modelR_mobile" src="{{ block.settings.perfil_imgR | image_url }}" width="" height="" loading="lazy">
+                </div>
+                <h2 class="name-review_mobile">
+                  {{ block.settings.name_review }}
+                </h2>
+              </div>
+              <div class="card-photo">
+                <img class="modelR" src="{{ block.settings.perfil_imgR | image_url }}" width="" height="" loading="lazy">
+              </div>
+              <h2 class="name-review">
+                {{ block.settings.name_review }}
+              </h2>
+              <p class="descR">{{ block.settings.descriptionR }}</p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer_R"></div>
+</a>
+
+{% schema %}
+{
+    "name":  "Sétima Section",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background_R",
+          "label": "Background"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_img_R",
+          "label": "Título"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "Review_Card",
+        "name": "Review",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "perfil_imgR",
+            "label": "Perfil"
+          },
+          {
+            "type": "text",
+            "id": "name_review",
+            "label": "Name"
+          },
+          {
+            "type": "text",
+            "id": "descriptionR",
+            "label": "Comentário"
+          }
+        ]
+      }
+    ],
+    "presets": [
+        {
+          "name": "Reviews",
+          "category": "imagem",
+          "blocks": [
+            {
+              "type": "Review_Card"
+            }
+          ]
+        }
+      ]
+}
+
+{% endschema %}

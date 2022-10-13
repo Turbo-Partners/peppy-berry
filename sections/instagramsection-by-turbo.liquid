@@ -1,0 +1,90 @@
+{% style %}
+.general_INSTA{
+  background-image: url({{ section.settings.background_INSTA | image_url }});
+  background-size: cover;
+  height: auto;
+}
+
+.banner_INSTA{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modelINSTA{
+  height: 8rem;
+}
+
+.footer_INSTA{
+  height: 0.7rem;
+  background-color: #c7d40d;
+}
+
+{% endstyle %}
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.17/dist/js/splide.min.js" defer="defer" type="text/javascript"></script>
+
+<div data-section-id="{{ section.background_INSTA }}" class="general_INSTA">
+    <div class="banner_INSTA">
+      <div class="banner__content_INSTA ">
+        <div class="banner__img_INSTA">
+            <img class="modelINSTA" src="{{ section.settings.banner_img_INSTA | image_url }}" width="auto" height="700" loading="lazy">
+        </div>
+        <div>
+          <section id="image-carousel" class="splide" aria-label="Beautiful Images">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="image01.jpg" alt="" width="auto" height="700" loading="lazy">
+                </li>
+                <li class="splide__slide">
+                  <img src="image02.jpg" alt="" width="auto" height="700" loading="lazy">
+                </li>
+                <li class="splide__slide">
+                  <img src="image03.jpg" alt="" width="auto" height="700" loading="lazy">
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="footer_INSTA" ></div>
+
+{% schema %}
+{
+    "name":  "Nona Section",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background_INSTA",
+          "label": "Background"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_img_INSTA",
+          "label": "Background"
+        },
+        {
+          "type": "image_picker",
+          "id": "title_img_INSTA",
+          "label": "Titulo Principal"
+        },
+        {
+          "type": "text",
+          "id": "description_INSTA",
+          "label": "Descrição"
+        }
+    ],
+    "presets": [
+        {
+          "name": "Instagram Section",
+          "category": "imagem"
+        }
+      ]
+}
+
+{% endschema %}

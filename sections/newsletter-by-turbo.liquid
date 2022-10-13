@@ -1,0 +1,183 @@
+{% style %}
+.general_NL{
+  background-image: url({{ section.settings.background_NL | image_url }});
+  background-size: cover;
+  background-position: center;
+}
+
+.banner_NL{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  /* gap: 15rem; */
+
+  padding: 5rem;
+}
+
+.banner_NL .banner__content_NL{
+  width: 57rem;
+}
+
+.banner_NL .input_content_box{
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 5rem;
+}
+
+.banner_NL .input_content_box .label-name{
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.ponto{
+  color: red;
+}
+
+.banner_NL .input_content_box .tab-nl{
+  width: 50rem;
+  min-width: unset;
+  max-width: unset;
+  height: auto;
+  min-height: unset;
+  max-height: unset;
+  display: block;
+  margin: 0;
+  padding: 10px;
+  border: 0;
+  background-image: unset;
+  line-height: 1.3em;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+  color: rgba(0, 0, 0, 0.700);
+  font-size: 1.7rem;
+
+}
+
+
+.banner_NL .input_content_box .tab-nl:focus{
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+.banner_NL .input_content_box .tab-nl::placeholder{
+  font-size:1.7rem;
+  color: rgba(0,0,0,0.500);
+}
+
+.banner_NL .input_content_box .btn{
+  background-color: #c7d40d;
+  color: #FFFFFF;
+  border-radius: 100px;
+  font-weight: bold; 
+
+  padding: 1rem;
+  width: 15rem;
+
+  border: none;
+  cursor: pointer;
+
+  margin-top: 1.5rem;
+}
+
+.title_NL{
+  height: 15rem;
+}
+
+.sec2NL{
+  color: #FFFFFF;
+}
+
+.footer_NL{
+  height: 0.7rem;
+  background-color: #c7d40d;
+}
+
+
+
+  @media screen and (max-width: 1050px){
+    .banner_NL{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner_NL .banner__content_NL{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 35rem;
+    }
+
+    .banner_NL .input_content_box{
+      margin-right: 0;
+    }
+
+    .banner_NL .input_content_box .tab-nl{
+      width: 30rem;
+    }
+
+    .title_NL{
+      height: 8rem;
+    }
+
+    .banner_NL .input_content_box .btn{
+      margin-left: 7.5rem;
+    }
+  }
+
+{% endstyle %}
+
+<div data-section-id="{{ section.background_NL }}" class="general_NL">
+    <div class="banner_NL">
+      <div class="banner__content_NL ">
+        <img class="title_NL" src="{{ section.settings.title_img_NL | image_url }}" width="auto" height="auto" loading="lazy">
+        <p class="sec2NL">{{ section.settings.description_NL }}</p>
+      </div>
+      <div class="input_content_box">
+        {% form 'customer' %}
+          <form>
+            <label class="label-name" for="tab-email">Endereço de e-mail <b class="ponto">*</b></label>
+            <input type="email" name="contact[email]" class="tab-nl" value placeholder="E.x joe@doe.com" required> 
+            <input type="submit" class="btn" value="INSCREVA-SE"/>
+          </form> 
+        {% endform %}
+      </div>
+    </div>
+</div>
+<div class="footer_NL"></div>
+
+{% schema %}
+{
+    "name":  "Décima Section",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background_NL",
+          "label": "Background"
+        },
+        {
+          "type": "image_picker",
+          "id": "title_img_NL",
+          "label": "Titulo Principal"
+        },
+        {
+          "type": "text",
+          "id": "description_NL",
+          "label": "Descrição"
+        }
+    ],
+    "presets": [
+        {
+          "name": "Newsletter",
+          "category": "imagem"
+        }
+      ]
+}
+
+{% endschema %}

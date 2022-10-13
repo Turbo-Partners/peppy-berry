@@ -1,0 +1,9 @@
+{
+  "sections": {
+    "main": {
+      "type": "return-and-exchange-by-turbo",
+      "settings": {}
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,67 @@
+<div data-section-id="{{ section.background }}" >
+    <div class="banner " >
+      <div class="banner__content">
+        <img class="title" src="{{ section.settings.premove_img | image_url }}" width="auto" height="auto" loading="lazy">
+        <img class="subtitle" src="{{ section.settings.sermovimento_img | image_url }}" width="auto" height="auto" loading="lazy">
+        <p>{{ section.settings.description }}</p>
+        <a href="#" class="bttn"><img class="bttn" src="{{ section.settings.button__image | image_url }}" width="auto" height="auto" loading="lazy"></a>
+      </div>
+      <div class="banner__img">
+        <img class="productimg" src="{{ section.settings.banner_img | image_url }}" width="auto" height="800" loading="lazy">
+        <a href="#" class="bttn_mobile"><img class="bttn" src="{{ section.settings.button__image | image_url }}" width="auto" height="auto" loading="lazy"></a>
+      </div>
+    </div>
+    <div class="footer__"> </div>
+  </div>
+  
+  
+  {% schema %}
+    {
+      "name":  "t:sections.image-banner.name",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background",
+          "label": "Background"
+        },
+        {
+          "type": "image_picker",
+          "id": "premove_img",
+          "label": "Titulo Principal"
+        },
+        {
+          "type": "image_picker",
+          "id": "sermovimento_img",
+          "label": "Subtitulo"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Descrição"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Link do Botao"
+        },
+        {
+          "type": "image_picker",
+          "id": "button__image",
+          "label": "Buyer button"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_img",
+          "label": "Banner Lateral"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Banner Principal",
+          "category": "imagem"
+        }
+      ]
+    }
+  {% endschema %}

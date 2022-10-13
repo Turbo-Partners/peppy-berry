@@ -1,0 +1,181 @@
+<style type="text/css">
+    details {
+        font-size: 1rem;
+        margin: 2rem 3rem;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        width: 100%;
+        background: #ffffff;
+        border-radius: 8px;
+        position: relative;
+        width: 500px;
+      }
+      
+      details[open] summary ~ * {
+        animation: sweep .7s ease-in-out;
+      }
+      
+      @keyframes sweep {
+        0%    {opacity: 0; transform: translateX(-10px)}
+        100%  {opacity: 1; transform: translateX(0)}
+      }
+      
+      details .summary-title {
+        -webkit-user-select: none;
+           -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+        
+        font-size: 2rem;
+        color: #000;
+        margin-left: 1rem;
+      }
+      
+      details:hover {
+        cursor: pointer;
+      }
+      
+      details .summary-content {
+        border-top: 1px solid #e2e8f0;
+        cursor: default;
+        padding: 1em;
+        font-weight: 300;
+        line-height: 1.5;
+        font-size: 1.5rem;
+        color: #000;
+      
+        
+      }
+      
+      details summary {
+        list-style: none;
+        
+      }
+      
+      details summary:focus {
+        outline: none;
+      }
+      
+      details summary:hover .summary-chevron-up svg {
+        opacity: 1;
+      }
+      
+      details .summary-chevron-up svg {
+        opacity: 0.5;
+      }
+      
+      details .summary-chevron-up,
+      details .summary-chevron-down {
+        pointer-events: none;
+        position: absolute;
+        top: 0.75em;
+        right: 1em;
+        background: #ffffff;
+      
+        
+      }
+      
+      details .summary-chevron-up svg,
+      details .summary-chevron-down svg {
+        display: block;
+      }
+      
+      details summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .title-one{
+        font-size: 3.5rem;
+        color: #000;
+        font-weight: bold;
+      }
+
+      @media screen and (max-width: 1050px){
+        details{
+          width: 300px;
+        }
+
+        .title-one{
+          font-size: 2rem;
+        }
+      }
+</style>
+
+<div class="background_finalfaq" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 5rem;">
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.2;">
+        <span style="font-size: 1.6rem; color: #000;">APOIO, SUPORTE</span>
+        <span class="title-one">Perguntas Frequentes</span>
+        <p style="text-align: center; font-weight: 300;">Você tem perguntas. Nós temos as respostas</p>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <details class="tab__details">
+            <summary class="tab_title">
+              <h3 class="summary-title">Para que serve?</h3>
+              <div class="summary-chevron-up">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </summary>
+            <p class="summary-content">O Pré-Move foi criado pensado na diversidade. Desenvolvemos uma fórmula exclusiva capaz de se adaptar ao seu dia-a-dia seja você um atleta de alta performance ou alguém que está começando a se exercitar hoje; seja você um profissional renomado ou um estudante que sonha alto.</p>
+            <div class="summary-chevron-down">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </details>
+        <details class="tab__details">
+            <summary class="tab_title">
+              <h3 class="summary-title">Qual é o modo de preparo?</h3>
+              <div class="summary-chevron-up">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </summary>
+            <p class="summary-content">Misturar 10g (1 medida doadora cheia) em 150 mL - 200ml de água gelada com auxílio de colher ou coqueteleira até dissolução completa.</p>
+            <div class="summary-chevron-down">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </details>
+        <details class="tab__details">
+            <summary class="tab_title">
+              <h3 class="summary-title">Posso tomar a qualquer hora do dia?</h3>
+              <div class="summary-chevron-up">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </summary>
+            <p class="summary-content">Sim! O Pré-move foi feito para você usar em várias situações.</p>
+            <div class="summary-chevron-down">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </details>
+        <details class="tab__details">
+            <summary class="tab_title">
+              <h3 class="summary-title">Possui glúten ou lactose?</h3>
+              <div class="summary-chevron-up">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </summary>
+            <p class="summary-content">Não possuí glúten e pode conter pequenas substâncias que tenham lactose.</p>
+            <div class="summary-chevron-down">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </details>
+        <details class="tab__details">
+            <summary class="tab_title">
+              <h3 class="summary-title">Quais são os ingredientes?</h3>
+              <div class="summary-chevron-up">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </summary>
+            <p class="summary-content">Polpa de Açaí, Cafeína, Taurina, L-Carnitina, Pimenta Vermelha, Vitaminas do Complexo B e Gengibre.</p>
+            <div class="summary-chevron-down">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </details>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Final FAQ",
+    "tag": "section",
+    "class": "section",
+    "settings": [],
+    "presets": [
+        {
+        "name": "Final FAQ",
+        "category": "texto"
+        }
+    ]
+}
+{% endschema %}

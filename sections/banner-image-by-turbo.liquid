@@ -1,0 +1,250 @@
+{% style %}
+.banner{
+  background-image: url({{ section.settings.background | image_url }});
+  background-size: cover;
+  height:800px;
+
+  margin: -130px 0;
+  position:sticky;
+
+}
+
+.banner .banner__box{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.banner .banner__content{
+  display: flex;
+  flex-direction: column; 
+  width: 40rem;
+    line-height: 1.5;   
+}
+
+.banner .banner__content .title{
+    height: 14rem;
+}
+
+.banner .banner__content .subtitle{
+    height: 10rem;
+}
+
+.desc1{
+    color: #f1f1f1;
+}
+
+
+.banner__content .bttn{
+    position: relative;
+    left: -20px;
+    height: 8rem;
+}
+
+.bttn{
+    color: #fff;
+    cursor: pointer;
+}
+
+.banner:hover .bttn{
+    height: 10rem;
+    transition: 0.5s ease-in-out;
+}
+
+.banner:hover .productimg{
+    height: 85rem;
+    transition: 0.5s ease-in-out;
+}
+
+.footer__{
+  height: 0.7rem;
+  background-color: #c7d40d;
+  margin-top: 13rem;
+}
+
+.bttn_mobile, .productimg_mobile, .product_box{
+  display: none;
+}
+.container_mobile{
+  display: none;
+}
+
+  @media screen and (max-width: 1050px){
+    .banner{
+      background-image: url({{ section.settings.background | image_url }});
+      background-size: cover;
+      background-position: center;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      height:auto;
+    }
+
+    .banner .banner__box{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .banner .banner__box .container_mobile{
+      width: 38rem;
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 25rem;
+      line-height: 1.5;   
+    }
+
+    .product_box{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      margin-left: -3rem;
+
+    }
+
+    .product_box span{
+      font-size: 1.3rem;
+      font-weight: normal;
+      color: #c7d40d;
+
+      margin-bottom: -1.5rem;
+    }
+
+    .product_box span b{
+      font-size: 2.5rem;
+    }
+
+    .banner__img{
+      margin-top: -3rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+
+    .desc_mobile{
+      text-align: center;
+      color: #f1f1f1;
+    }
+
+    .bttn_mobile, .container_mobile {
+      display: block;
+    }
+
+    .productimg_mobile{
+      display: block;
+      height: 20rem;
+    }
+
+    .bttn, .productimg, .banner__content, .title, .subtitle, .desc1{
+      display: none;
+    }
+
+    .title_mobile{
+      height: 9rem;
+    }
+
+    .subtitle_mobile{
+      height: 6.5rem;
+    }
+
+  }
+
+{% endstyle %}
+
+
+
+<a name="banner-image">
+<div class="banner" data-section-id="{{ section.background }}" >
+  <div class="banner__box " >
+    <div class="banner__content">
+      <img class="title" src="{{ section.settings.premove_img | image_url }}" width="auto" height="auto" loading="lazy">
+      <img class="subtitle" src="{{ section.settings.sermovimento_img | image_url }}" width="auto" height="auto" loading="lazy">
+      <p class="desc1">{{ section.settings.description }}</p>
+      <a href="{{ section.settings.button_url }}" name="buybutton" class="bttn"><img class="bttn" src="{{ section.settings.button__image | image_url }}" width="auto" height="auto" loading="lazy"></a>
+    </div>
+    {% comment %} MOBILE {% endcomment %}
+    <div class="container_mobile">
+      <img class="title_mobile" src="{{ section.settings.premove_img | image_url }}" width="auto" height="auto" loading="lazy">
+      <img class="subtitle_mobile" src="{{ section.settings.sermovimento_img | image_url }}" width="auto" height="auto" loading="lazy">
+      <p class="desc_mobile">{{ section.settings.description }}</p>
+    </div>
+    {% comment %} END MOBILE {% endcomment %}
+    <div class="banner__img">
+      <img class="productimg" src="{{ section.settings.banner_img | image_url }}" width="auto" height="800" loading="lazy">
+      {% comment %} Mobile {% endcomment %}
+      <img class="productimg_mobile" src="{{ section.settings.banner_img | image_url }}" width="auto" height="800" loading="lazy">
+      <div class="product_box">
+        <span class="product_price">por apenas <b>R$127,90</b></span>
+        <a name="buybutton" class="bttn_mobile_cont" href="{{ section.settings.button_url }} ><img class="bttn__mobile" src="{{ section.settings.button__image | image_url }}" width="auto" height="70" loading="lazy"></a>
+      </div>
+      {% comment %} end mobile {% endcomment %}
+    </div>
+  </div>
+</div>
+<div class="footer__"> </div>
+</a>
+
+
+{% schema %}
+  {
+    "name":  "Primeira Section",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background",
+        "label": "Background"
+      },
+      {
+        "type": "image_picker",
+        "id": "premove_img",
+        "label": "Titulo Principal"
+      },
+      {
+        "type": "image_picker",
+        "id": "sermovimento_img",
+        "label": "Subtitulo"
+      },
+      {
+        "type": "text",
+        "id": "description",
+        "label": "Descrição"
+      },
+      {
+        "type": "url",
+        "id": "button_url",
+        "label": "Link do Botao"
+      },
+      {
+        "type": "image_picker",
+        "id": "button__image",
+        "label": "Buyer button"
+      },
+      {
+        "type": "image_picker",
+        "id": "banner_img",
+        "label": "Banner Lateral"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Primeira Section",
+        "category": "imagem"
+      }
+    ]
+  }
+{% endschema %}

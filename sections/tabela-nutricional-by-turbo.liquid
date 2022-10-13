@@ -1,0 +1,126 @@
+{% style %}
+.general_TN{
+  background-image: url({{ section.settings.background_TN | image_url }});
+  background-size: cover;
+  background-position: center;
+  height: auto;
+
+  margin-top: -1rem;
+}
+
+.banner_TN{
+    padding: 7rem;
+}
+
+.banner_TN .banner__content_TN{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5rem;
+}
+
+.banner__content_TN .content_1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modelTN{
+    height: 10rem;
+}
+
+.footer_TN{
+  height: 0.7rem;
+  background-color: #60e2c9;
+}
+
+.model1_mobile_NT, .model_type1_mobile{
+  display: none;
+}
+
+  @media screen and (max-width: 1050px){
+    .banner__content_TN{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modelTN{
+      height: 6rem;
+    }
+
+    .model1_mobile_NT, .model_type1_mobile{
+      display: block;
+
+      margin-top: 2rem;
+    }
+
+    .model_type1_mobile{
+      height: 45rem;
+      border-radius: 2rem;
+    }
+
+  }
+
+{% endstyle %}
+
+<a name="tabelanutricional">
+<div data-section-id="{{ section.background_TN }}" class="general_TN">
+    <div class="banner_TN">
+      <div class="banner__content_TN ">
+        <div class="content_1">
+            <div class="banner__img_TN">
+                <img class="modelTN" src="{{ section.settings.banner_img_TN | image_url }}" width="auto" height="auto" loading="lazy">
+            </div>
+            <div class="banner__img_TN2">
+                <img class="model1" src="{{ section.settings.banner_img_TN2 | image_url }}" width="auto" height="700" loading="lazy">
+                <img class="model1_mobile_NT" src="{{ section.settings.banner_img_TN2 | image_url }}" width="auto" height="700" loading="lazy">
+            </div>
+        </div>
+        <div class="banner__img_TN2">
+            <img class="model1" src="{{ section.settings.banner_img_TN3 | image_url }}" width="auto" height="700" loading="lazy">
+            <img class="model_type1_mobile" src="{{ section.settings.banner_img_TN3 | image_url }}" width="auto" height="700" loading="lazy">
+        </div>
+    </div>
+</div>
+<div class="footer_TN"></div>
+</a>
+
+{% schema %}
+{
+    "name":  "Sexta Section",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background_TN",
+          "label": "Background"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_img_TN",
+          "label": "Titulo Principal"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_img_TN2",
+          "label": "Tabela Nutricional"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_img_TN3",
+          "label": "Foto 1"
+        }
+    ],
+    "presets": [
+        {
+          "name": "Tabela Nutricional",
+          "category": "imagem"
+        }
+      ]
+}
+
+{% endschema %}

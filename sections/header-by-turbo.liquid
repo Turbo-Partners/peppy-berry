@@ -1,0 +1,267 @@
+<style>
+
+.header-container{
+    background-image: url({{ section.settings.background_header | image_url }});
+    background-size: cover;
+    
+    height: 12rem;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+
+    position: sticky;
+    z-index: 1;
+
+    margin-top: 5rem;
+}
+
+.header-container .hprincipal- .header-contents{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+
+    gap: 5rem;
+}
+
+.header-container  .header-contents .image--block{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.header-container .header-contents .navbar--block{
+    display: flex;
+    flex-wrap: nowrap;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 10rem;
+}
+
+.button-block{
+    margin-left: 4rem;
+
+    padding: 0.2rem 1.5rem;
+    background-color: #c7d40d;
+
+    border: none;
+    border-radius: 15rem;
+
+}
+
+.button-block .btn{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 13px;
+    font-family: var(--font-body-family);
+}
+
+.header-container .header-contents .navbar--block ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.header-container .header-contents .navbar--block ul li {
+    color: #ffffff;
+    
+}
+
+.header-container .header-contents .navbar--block ul li:hover {
+    color: #ffffff;
+    transition: 0.6s ease-in-out;
+    opacity: 1;
+}
+
+.header-container .header-contents .navbar--block a{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 13px;
+    font-family: var(--font-body-family);
+
+    opacity: .8;
+
+    line-height: 1rem;
+}
+.header-container .header-contents .navbar--block a:hover{
+    color: #ffffff;
+    transition: 0.6s ease-in-out;
+    opacity: 1;
+}
+
+.header-container .header-contents .navbar--block .header_icons{
+    display:flex;
+    
+    margin-left: 2rem;
+    gap: 1.5rem; 
+
+}
+
+.header-container .header-contents .navbar--block .header_icons .line{
+    border-left: 1px solid rgba(0,0,0,0.1);
+    height: 30px;
+    vertical-align: middle;
+    position: relative;
+    
+
+    color: transparent;
+
+}
+
+    @media screen and (max-width: 1050px){
+        .header-container{
+            background-color: transparent;
+            
+            height: 7rem;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: nowrap;
+        
+            position: sticky;
+            z-index: 1;
+        }
+
+        .header-container .hprincipal- .header-contents{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        
+            gap: 0;
+
+            margin-top: 6rem;
+        }
+
+        .header-container .header-contents .navbar--block{
+            display: flex;
+        
+            align-items: center;
+            justify-content: center;
+        
+            margin-left: -10rem;
+        }
+
+        .header_icons{
+            display:flex;
+            align-items: center;
+            justify-content: space-around;
+            width: 12rem;
+            
+            margin-right: -4rem; 
+            margin-top: 1rem;
+        
+        }
+
+        .image--block{
+            height: 7rem;
+        }
+
+        .nav--list a, .button-block, .line, .insta_icon{
+            display: none;
+        }
+
+    }
+
+</style>
+
+<header class="header-container">
+    <div class="hprincipal-">
+        <div class="header-contents">
+            <div >
+                <img class="image--block" src= "{{ section.settings.logo | image_url }}" height="50" width="auto" loading="lazy">
+            </div>
+            <nav class="navbar--block">
+                
+                <ul class="nav--list">
+                    {% for link in section.settings.menu.links %}
+                        {% if link.title == "INÍCIO" %}    
+                            <a href="{{ link.url }}#banner-image">
+                                {{ link.title }}
+                            </a>
+                        {% endif %}
+                        {% if link.title == "CONHEÇA" %}    
+                            <a href="{{ link.url }}#conheca">
+                                {{ link.title }}
+                            </a>
+                        {% endif %}
+                        {% if link.title == "BENEFÍCIOS" %}    
+                            <a href="{{ link.url }}#beneficios">
+                                {{ link.title }}
+                            </a>
+                        {% endif %}
+                        {% if link.title == "QUANDO TOMAR" %}    
+                            <a href="{{ link.url }}#quandotomar">
+                                {{ link.title }}
+                            </a>
+                        {% endif %}
+                        {% if link.title == "TABELA NUTRICIONAL" %}    
+                            <a href="{{ link.url }}#tabelanutricional">
+                                {{ link.title }}
+                            </a>
+                        {% endif %}
+                        {% if link.title == "REVIEWS" %}    
+                            <a href="{{ link.url }}#reviews">
+                                {{ link.title }}
+                            </a>
+                        {% endif %}
+                    {% endfor %}               
+                </ul>
+    
+                <div class="button-block">
+                    <a class="btn" href="{{ section.settings.button_url }}">COMPRAR AGORA</a>
+                </div>
+    
+                <div class="header_icons">
+                    <svg class="cart_icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="fill: #c7d40d;transform: ;msFilter:;">
+                        <path d="M21.822 7.431A1 1 0 0 0 21 7H7.333L6.179 4.23A1.994 1.994 0 0 0 4.333 3H2v2h2.333l4.744 11.385A1 1 0 0 0 10 17h8c.417 0 .79-.259.937-.648l3-8a1 1 0 0 0-.115-.921z"></path><circle cx="10.5" cy="19.5" r="1.5"></circle><circle cx="17.5" cy="19.5" r="1.5"></circle></svg>
+                    <svg class="user_icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="fill: #c7d40d;transform: ;msFilter:;">
+                        <path d="M7.5 6.5C7.5 8.981 9.519 11 12 11s4.5-2.019 4.5-4.5S14.481 2 12 2 7.5 4.019 7.5 6.5zM20 21h1v-1c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h17z"></path></svg>
+                    <div class="line">.</div>
+                    <svg class="insta_icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" style="fill: #c7d40d;transform: ;msFilter:;">
+                        <path d="M20.947 8.305a6.53 6.53 0 0 0-.419-2.216 4.61 4.61 0 0 0-2.633-2.633 6.606 6.606 0 0 0-2.186-.42c-.962-.043-1.267-.055-3.709-.055s-2.755 0-3.71.055a6.606 6.606 0 0 0-2.185.42 4.607 4.607 0 0 0-2.633 2.633 6.554 6.554 0 0 0-.419 2.185c-.043.963-.056 1.268-.056 3.71s0 2.754.056 3.71c.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.043 1.268.056 3.71.056s2.755 0 3.71-.056a6.59 6.59 0 0 0 2.186-.419 4.615 4.615 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.187.043-.962.056-1.267.056-3.71-.002-2.442-.002-2.752-.058-3.709zm-8.953 8.297c-2.554 0-4.623-2.069-4.623-4.623s2.069-4.623 4.623-4.623a4.623 4.623 0 0 1 0 9.246zm4.807-8.339a1.077 1.077 0 0 1-1.078-1.078 1.077 1.077 0 1 1 2.155 0c0 .596-.482 1.078-1.077 1.078z"></path><circle cx="11.994" cy="11.979" r="3.003"></circle></svg>
+                </div>
+            </nav>           
+        </div>
+    </div>
+    
+</header>
+
+{% schema %}
+{
+    "name": "Header by Turbo",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "background_header",
+            "label":" Background"
+        },
+        {
+            "type": "image_picker",
+            "id": "logo",
+            "label":" Logo"
+        },
+        {
+            "type": "link_list",
+            "id": "menu",
+            "default": "main-menu",
+            "label": "t:sections.header.settings.menu.label"
+        },
+        {
+            "type": "url",
+            "id": "button_url",
+            "label": "Link do Botao"
+        }
+    ]
+
+}
+{% endschema %}

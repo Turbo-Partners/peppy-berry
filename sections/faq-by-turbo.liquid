@@ -1,0 +1,426 @@
+{% style %}
+.general_FAQ{
+  background-image: url({{ section.settings.background_FAQ | image_url }});
+  background-size: cover;
+  height: auto;
+
+  padding: 7rem;
+}
+
+.banner_FAQ{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 3rem;
+}
+
+.tab-wrap {
+  transition: 0.3s box-shadow ease;
+  border-radius: 6px;
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  list-style: none;
+  background-color: #fff;
+  margin: 40px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.tab-wrap:hover {
+  box-shadow: 0 12px 23px rgba(0, 0, 0, 0.23), 0 10px 10px rgba(0, 0, 0, 0.19);
+}
+
+.tab {
+  display: none;
+}
+.tab:checked:nth-of-type(1) ~ .tab__content:nth-of-type(1) {
+  opacity: 1;
+  transition: 0.5s opacity ease-in, 0.8s transform ease;
+  position: relative;
+  top: 0;
+  z-index: 100;
+  transform: translateY(0px);
+  text-shadow: 0 0 0;
+}
+.tab:checked:nth-of-type(2) ~ .tab__content:nth-of-type(2) {
+  opacity: 1;
+  transition: 0.5s opacity ease-in, 0.8s transform ease;
+  position: relative;
+  top: 0;
+  z-index: 100;
+  transform: translateY(0px);
+  text-shadow: 0 0 0;
+}
+.tab:checked:nth-of-type(3) ~ .tab__content:nth-of-type(3) {
+  opacity: 1;
+  transition: 0.5s opacity ease-in, 0.8s transform ease;
+  position: relative;
+  top: 0;
+  z-index: 100;
+  transform: translateY(0px);
+  text-shadow: 0 0 0;
+}
+.tab:checked:nth-of-type(4) ~ .tab__content:nth-of-type(4) {
+  opacity: 1;
+  transition: 0.5s opacity ease-in, 0.8s transform ease;
+  position: relative;
+  top: 0;
+  z-index: 100;
+  transform: translateY(0px);
+  text-shadow: 0 0 0;
+}
+.tab:checked:nth-of-type(5) ~ .tab__content:nth-of-type(5) {
+  opacity: 1;
+  transition: 0.5s opacity ease-in, 0.8s transform ease;
+  position: relative;
+  top: 0;
+  z-index: 100;
+  transform: translateY(0px);
+  text-shadow: 0 0 0;
+}
+
+.tab:first-of-type:not(:last-of-type) + label {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.tab:not(:first-of-type):not(:last-of-type) + label {
+  border-radius: 0;
+}
+.tab:last-of-type:not(:first-of-type) + label {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.tab:checked + label {
+  background-color: #fff;
+  box-shadow: 0 -1px 0 #fff inset;
+  cursor: default;
+}
+.tab:checked + label:hover {
+  box-shadow: 0 -1px 0 #fff inset;
+  background-color: #fff;
+}
+.tab + label {
+  box-shadow: 0 -1px 0 #eee inset;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  color: #612ca7;
+  font-weight: bold;
+  flex-grow: 3;
+  text-align: center;
+  background-color: #f2f2f2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: center;
+  transition: 0.3s background-color ease, 0.3s box-shadow ease;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 15px;
+}
+.tab + label:hover {
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 0 #f4f4f4 inset;
+}
+.tab__content {
+  padding: 10px 25px;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  opacity: 0;
+  left: 0;
+  transform: translateY(-3px);
+  border-radius: 6px;
+}
+
+/* boring stuff */
+
+.container {
+  /* margin: 0 auto; */
+  display: block;
+  max-width: 800px;
+
+  border-radius: 8px;
+}
+
+.container > *:not(.tab-wrap) {
+  padding: 0 80px;
+}
+
+h1,
+h2 {
+  margin: 0;
+  color: #444;
+  text-align: center;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 1em;
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* details */
+details {
+  font-size: 1rem;
+  margin: 2rem 3rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  width: 500px;
+}
+
+details[open] summary ~ * {
+  animation: sweep .7s ease-in-out;
+}
+
+@keyframes sweep {
+  0%    {opacity: 0; transform: translateX(-10px)}
+  100%  {opacity: 1; transform: translateX(0)}
+}
+
+details .summary-title {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  
+  font-size: 2rem;
+  color: #e99b00;
+}
+
+details:hover {
+  cursor: pointer;
+}
+
+details .summary-content {
+  border-top: 1px solid #e2e8f0;
+  cursor: default;
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  color: #612ca7;
+
+  
+}
+
+details summary {
+  list-style: none;
+}
+
+details summary:focus {
+  outline: none;
+}
+
+details summary:hover .summary-chevron-up svg {
+  opacity: 1;
+}
+
+details .summary-chevron-up svg {
+  opacity: 0.5;
+}
+
+details .summary-chevron-up,
+details .summary-chevron-down {
+  pointer-events: none;
+  position: absolute;
+  top: 0.75em;
+  right: 1em;
+  background: #ffffff;
+
+  
+}
+
+details .summary-chevron-up svg,
+details .summary-chevron-down svg {
+  display: block;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+.modelFAQ{
+  height: 16rem;
+}
+
+.footer_FAQ{
+  margin-bottom: 1rem;
+  height: 0.7rem;
+  background-color: #60e2c9;
+}
+
+  @media screen and (max-width: 1050px){
+    .tab-wrap{
+      max width: 36rem;
+      width: 36rem;
+
+      border-radius: 2rem;
+    }
+
+    .tab:first-of-type:not(:last-of-type) + label {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 0;
+    }
+
+    details{
+      width: 30rem;
+      margin: 2rem 0;
+    }
+
+    details .summary-content {
+      text-align: start;
+    }
+
+  }
+
+{% endstyle %}
+
+<div data-section-id="{{ section.background_FAQ }}" class="general_FAQ">
+    <div class="banner_FAQ">
+        <div class="banner__img_FAQ">
+          <img class="modelFAQ" src="{{ section.settings.banner_img_FAQ | image_url }}" width="auto" height="auto" loading="lazy">
+        </div>
+
+        <div class="container">
+          <div class="tab-wrap">
+        
+            <!-- active tab on page load gets checked attribute -->
+            <input type="radio" id="tab1" name="tabGroup1" class="tab" checked>
+            <label class="label_title" for="tab1">{{ section.settings.info_title }}</label>
+        
+            <input type="radio" id="tab2" name="tabGroup1" class="tab">
+            <label class="label_title" for="tab2">{{ section.settings.payment_title }}</label>
+        
+            <input type="radio" id="tab3" name="tabGroup1" class="tab">
+            <label class="label_title" for="tab3">{{ section.settings.delivery_title }}</label>
+        
+            <div class="tab__content">
+              {% for block in section.blocks %}
+                <details class="tab__details-{{ block.id }}-{{ section.id }}">
+                  <summary class="tab_title">
+                    <h3 class="summary-title">{{ block.settings.questionFAQ }}</h3>
+                    <div class="summary-chevron-up">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                  </summary>
+                  <p class="summary-content">{{ block.settings.answerFAQ }}</p>
+                  <div class="summary-chevron-down">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+                </details>
+              {% endfor %}
+            </div>
+        
+            <div class="tab__content">
+              <details class="tab__details">
+                <summary class="tab_title">
+                  <h3 class="summary-title">Quais são as formas de pagamento aceitas?</h3>
+                  <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </div>
+                </summary>
+                <p class="summary-content">Cartão de crédito (em até 3x sem juros) e boleto bancário (à vista).</p>
+                <div class="summary-chevron-down">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              </details>
+            </div>
+        
+            <div class="tab__content">
+              <details class="tab__details">
+                <summary class="tab_title">
+                  <h3 class="summary-title">Quais as opções de envio e valor do frete?</h3>
+                  <div class="summary-chevron-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                  </div>
+                </summary>
+                <p class="summary-content">O envio do seu pedido pode ser feito via transportadora ou Correios (PAC ou SEDEX), de acordo com a sua escolha. O valor do frete e prazo de entrega variam de acordo com o CEP de destino e podem ser simulados antes de você finalizar sua compra.</p>
+                <div class="summary-chevron-down">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg>
+              </details>
+            </div>
+        
+          </div>
+        </div>
+    </div> 
+</div>
+<div class="footer_FAQ"></div>
+
+{% schema %}
+{
+    "name":  "Oitava Section",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background_FAQ",
+          "label": "Background"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_img_FAQ",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "info_title",
+          "label": "Título 1"
+        },
+        {
+          "type": "text",
+          "id": "payment_title",
+          "label": "Título 2"
+        },
+        {
+          "type": "text",
+          "id": "delivery_title",
+          "label": "Título 3"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "FAQ",
+        "name": "QuestionsAndAnswers",
+        "settings": [
+          {
+            "type": "text",
+            "id": "questionFAQ",
+            "label": "Pergunta"
+          },
+          {
+            "type": "text",
+            "id": "answerFAQ",
+            "label": "Resposta"
+          }
+        ]
+      }
+    ],
+    "presets": [
+        {
+          "name": "FAQ",
+          "category": "imagem",
+          "blocks": [
+            {
+              "type": "FAQ"
+            }
+          ]
+        }
+      ]
+}
+
+{% endschema %}

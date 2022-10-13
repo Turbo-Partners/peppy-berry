@@ -1,0 +1,270 @@
+{% style %}
+.general_b{
+    background-image: url({{ section.settings.backgroundb | image_url }});
+    background-size: cover;
+
+    padding: 5rem;
+}
+
+.banner_b{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner_b .banner__contentb{
+    width: 48rem;
+    margin-right: 10rem;
+    line-height: 1.5;   
+
+}
+
+.banner_b .banner__contentb > p{
+  color: #fff;
+}
+
+.banner_b .banner__contentb p {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.banner_b .banner__contentb li{
+    color: #d9d5e1;
+}
+
+.banner__contentb .bttnb{
+    position: relative;
+    left: -30px;
+    cursor: pointer;
+    height: 8rem;
+}
+
+.bttnb:hover{
+    height: 9rem;
+    transition: 0.5s ease-in-out;
+}
+
+.banner_b .banner__contentb .titleb{
+    height: 15rem;
+}
+
+.banner_b .banner__contentb .titleb2{
+    height: 9rem;
+}
+
+.banner__imgb2{
+    width: 90rem;
+}
+
+.peppy_b_mobile, .banner__imgb2_mobile, .bttnb_mobile{
+  display: none;
+}
+
+.footerb__{
+  height: 0.7rem;
+  background-color: #e99b00;
+  margin: 0;
+  border: none;
+}
+
+  @media screen and (max-width: 1050px){
+    .general_b{
+      background-image: url({{ section.settings.backgroundb | image_url }});
+      background-size: cover;
+
+    }
+    
+    .banner_b{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    .general_b .banner_b .banner__contentb{
+      width: 30rem;
+      
+      line-height: 1; 
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      margin-right: 0;
+    }
+
+
+
+    .banner_b .banner__contentb .listBenefits{
+      display: block;
+      color: #d9d5e1;
+    }
+
+    .banner_b .banner__contentb .titleb{
+      height: 9rem;
+    }
+
+    .banner_b .banner__contentb .titleb2{
+      height: 5.5rem;
+
+      margin-top: 5rem;
+    }
+
+    .banner_b .banner__imgb_mobile{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .peppy_b_mobile{
+      display: block;
+      height: 40rem;
+      border-radius: 2rem;
+      box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.500);
+
+      margin-top: 1rem;
+    }
+
+    .bttnb_mobile{
+      display: block;
+      height: 10rem;
+    } 
+
+    .banner__imgb2_mobile{
+      display: block;
+      height: 6rem;
+      margin-top: 1.5rem;
+    }
+
+    .model1, .banner__imgb2, .bttnb{
+      display: none;
+    }
+  } 
+
+{% endstyle %}
+
+<a name="beneficios">
+<div data-section-id="{{ section.backgroundb }}" class="general_b">
+    <div class="banner_b">
+      <div class="banner__contentb ">
+        <p class="sec2b-above">BENEFÍCIOS</p>
+        <img class="titleb" src="{{ section.settings.title_imgb | image_url }}" width="auto" height="auto" loading="lazy">
+        <p class="sec2b">{{ section.settings.descriptionb }}</p>
+        {% comment %} <p class="sec2">{{ section.settings.descriptionbplus }}</p> {% endcomment %}
+        <ul class="listBenefits">
+            <li class="sec2b"><b>{{ section.settings.descriptionbplus1 }}</b></li>
+            <li class="sec2b"><b>{{ section.settings.descriptionbplus2 }}</b></li>
+            <li class="sec2b"><b>{{ section.settings.descriptionbplus3 }}</b></li>
+        </ul>
+        <img class="titleb2" src="{{ section.settings.title2_imgb | image_url }}" width="auto" height="auto" loading="lazy">
+        <p class="sec2b">{{ section.settings.description__b1 }}</p>
+        <p class="sec2b">{{ section.settings.descriptionb__b2 }}</p>
+        <p class="sec2b">{{ section.settings.descriptionb__b3 }}</p>
+        <a href="{{ section.settings.button_urlb }}"><img class="bttnb" src="{{ section.settings.button__imageb | image_url }}" width="" height="" loading="lazy"></a>
+        <a href="{{ section.settings.button_urlb }}"><img class="bttnb_mobile" src="{{ section.settings.button__imageb | image_url }}" width="" height="" loading="lazy"></a>
+        <img class="peppy_b_mobile" src="{{ section.settings.banner_imgb | image_url }}" width="auto" height="auto" loading="lazy">
+        <img class="banner__imgb2_mobile" src="{{ section.settings.banner_imgb2 | image_url }}" width="" height="" loading="lazy">
+      </div>
+      <div class="banner__imgb">
+        <img class="model1" src="{{ section.settings.banner_imgb | image_url }}" width="auto" height="700" loading="lazy">
+        
+      </div>
+      <div class="banner__imgb_mobile">
+        <img class="banner__imgb2" src="{{ section.settings.banner_imgb2 | image_url }}" width="" height="" loading="lazy">
+        
+      </div>
+    </div>
+</div>
+<hr class="footerb__" />
+</a>
+  
+  
+  {% schema %}
+    {
+      "name":  "Terceira Section",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "backgroundb",
+          "label": "Background"
+        },
+        {
+          "type": "image_picker",
+          "id": "title_imgb",
+          "label": "Titulo Principal"
+        },
+        {
+          "type": "text",
+          "id": "descriptionb",
+          "label": "Descrição"
+        },
+        {
+          "type": "text",
+          "id": "descriptionbplus1",
+          "label": "Descrição +"
+        },
+        {
+          "type": "text",
+          "id": "descriptionbplus2",
+          "label": "Descrição +"
+        },
+        {
+          "type": "text",
+          "id": "descriptionbplus3",
+          "label": "Descrição +"
+        },
+        {
+            "type": "image_picker",
+            "id": "title2_imgb",
+            "label": "Titulo 2"
+        },
+        {
+            "type": "text",
+            "id": "description__b1",
+            "label": "Descrição ++"
+        },
+        {
+            "type": "text",
+            "id": "descriptionb__b2",
+            "label": "Descrição ++"
+        },
+        {
+            "type": "text",
+            "id": "descriptionb__b3",
+            "label": "Descrição ++"
+        },
+        {
+          "type": "url",
+          "id": "button_urlb",
+          "label": "Link do Botao"
+        },
+        {
+          "type": "image_picker",
+          "id": "button__imageb",
+          "label": "Buyer button"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_imgb",
+          "label": "Imagem Lateral 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_imgb2",
+          "label": "Imagem Lateral 2"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Benefícios",
+          "category": "imagem"
+        }
+      ]
+    }
+  {% endschema %}

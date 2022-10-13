@@ -1,0 +1,144 @@
+{% style %}
+.background-mp{
+    background-image: url({{ section.settings.background-mp }});
+    background-color: rgb(50,28,86);
+    background-size: cover;
+}
+
+.container-contents-mp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5rem;
+}
+
+.container-contents-mp .thumb-videos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5rem;
+
+}
+
+.container-contents-mp .thumb-videos .thumb-box{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* background-color: red; */
+
+    height: 50rem;
+    width: 30rem;
+    
+    line-height:1.4;
+}
+
+.container-contents-mp .thumb-videos .thumb-box video{
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+    
+    border-radius: 2rem;
+}
+
+.title-mp{
+    font-size: 4rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.thumb-videos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.thumb-videos span{
+    color: #c7d40d;
+    font-size: 2.5rem;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.5rem;
+}
+
+.thumb-videos p{
+    color: #fff;
+    font-size: 1.5rem;
+
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 1050px){
+    .container-contents-mp .thumb-videos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        gap: 0rem;
+    }
+}
+
+
+{% endstyle %}
+
+<a name="mododepreparo">
+<div class="background-mp">
+    <div class="container-contents-mp">
+        <div >
+            <span class="title-mp">Modo de Preparo</span>
+        </div>
+        <div class="thumb-videos">
+            <div class="thumb-box">
+                <video autoplay="true" muted loop id="video-by-turbo__video">
+                    <source type="video/mp4" src="{{ 'passo_1-transcode.mp4' | asset_url }}">
+                </video>
+                <span>{% render 'arrowpass' %} PASSO 1</span>
+                <p>Adicione um scoop do seu Pré-Move com água gelada.</p>   
+            </div>
+            <div class="thumb-box">
+                <video autoplay="true" muted loop id="video-by-turbo__video">
+                    <source type="video/mp4" src="{{ 'passo_2-transcode.mp4' | asset_url }}">
+                </video>
+                <span>{% render 'arrowpass' %} PASSO 2</span>
+                <p>Agite bem ou bata no liquidificador. Experimente também com frutas (opcional).</p>   
+            </div>
+            <div class="thumb-box">
+                <video autoplay="true" muted loop id="video-by-turbo__video">
+                    <source type="video/mp4" src="{{ 'passo_3-transcode.mp4' | asset_url }}">
+                </video>
+                <span>{% render 'arrowpass' %} PASSO 3</span>
+                <p>Saborei seu drink com energia e saúde.</p>   
+            </div>
+        </div>
+    </div>
+</div>
+</a>
+
+{% schema %}
+{
+    "name": "Modo de Preparo",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+        "type": "image_picker",
+        "id": "background-mp",
+        "label": "Background"
+        }
+    ],
+    "presets": [
+        {
+        "name": "Modo de Preparo",
+        "category": "imagem"
+        }
+    ]
+}
+{% endschema %}

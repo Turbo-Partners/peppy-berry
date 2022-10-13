@@ -1,0 +1,270 @@
+
+{% style %}
+
+
+.general_i{
+  background-color: #452683;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+
+  padding: 5rem;
+}
+
+.banner__content_i{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner__content_i .InfosContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner__content_i .InfosContainer .introInfoContent{
+    text-align: center;
+}
+
+.banner__content_i .InfosContainer .introInfoContent .sec2im{
+    font-size: 4rem;
+    font-weight: bold;
+    color: #c7d40d;
+    line-height: 1;
+
+    margin-top: -2rem;
+}
+
+.banner__content_i .InfosContainer .introInfoContent .sec2im_plus{
+    font-size: 2rem;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+}
+
+.banner__content_i .InfosContainer .title_im{
+    height: 37rem;
+
+    margin-top: -7rem;
+}
+
+.sec2i{
+  color: #fff;
+}
+
+/* boring stuff */
+
+
+
+/* details */
+details {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  background: #ffffff;
+  border-radius: 8px;
+  width: 500px;
+}
+
+details[open] summary ~ * {
+  animation: sweep .7s ease-in-out;
+}
+
+@keyframes sweep {
+  0%    {opacity: 0; transform: translateX(-10px)}
+  100%  {opacity: 1; transform: translateX(0)}
+}
+
+details .summary-title-mi {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  
+  font-size: 2.5rem;
+  color: #452683;
+  font-weight: bold;
+
+}
+
+details:hover {
+  cursor: pointer;
+}
+
+details .summary-content {
+  border-top: 1px solid #e2e8f0;
+  cursor: default;
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  color: #000;
+
+
+}
+
+details summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 1.5rem;
+}
+
+details summary:focus {
+  outline: none;
+}
+
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+.plus {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 32px;
+    line-height: 30px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.plus1{
+  transform: rotate(0deg);
+  transition: 0.2s ease-out;
+}
+
+.plus2{
+  transform: rotate(45deg);
+  transition: 0.2s ease-out;
+}
+
+.footer_FAQ{
+  margin-bottom: 1rem;
+  height: 0.7rem;
+  background-color: #60e2c9;
+}
+
+  @media screen and (max-width: 1050px){
+    .tab-wrap{
+      max width: 34rem;
+      width: 36rem;
+
+      border-radius: 2rem;
+    }
+
+    details{
+      width: 30rem;
+      margin: 2rem 0;
+    }
+
+    details .summary-content {
+      text-align: start;
+    }
+
+    details .summary-title-mi{
+      font-size: 2rem;
+    }
+
+    .banner__content_i .InfosContainer .title_im{
+      height: 23rem;
+      margin-top: -8rem;
+    }
+
+    .banner__content_i .InfosContainer .introInfoContent .sec2im_plus{
+      font-size: 1.5rem;
+    }
+
+  }
+
+
+{% endstyle %}
+
+
+<a name="maisingredientes">
+<div class="general_i">
+    <div class="banner_i">
+      <div class="banner__content_i ">
+        <div class="InfosContainer">
+          <div class="introInfoContent">          
+            <img class="title_im" src="{{ section.settings.title_img_i | image_url }}" width="auto" height="auto" loading="lazy">
+            <p class="sec2im">Não é mágica.<br> É pura ciência.</p>
+            <p class="sec2im_plus">A fórmula foi testada várias vezes, até chegarmos na combinação ideal de nutrientes para o seu cérebro.</p>
+          </div>
+            {% for block in section.blocks %}
+              <details class="tab__details-{{ block.id }}-{{ section.id }}">
+                <summary class="tab_title">
+                  <h3 class="summary-title-mi">{{ block.settings.questionFAQ_m }}</h3>
+                  <p class="plus plus1" id="icon_product-{{ forloop.index }}" onClick="changeDesc({{ forloop.index }})" >+</p>
+                  <script>
+                    function changeDesc(n) {
+                      var plus = "icon_product-" + n;
+                      var element = document.getElementById(plus);
+                      console.log(element);
+                      if(element.classList.contains("plus2")) {
+                        element.classList.remove("plus2");
+                        element.classList.add("plus1");
+                      } else{
+                        element.classList.add("plus2");
+                        element.classList.remove("plus1");
+                      }
+                    }
+                  </script>
+                </summary>
+                <p class="summary-content">{{ block.settings.answerFAQ_m }}</p>
+              </details>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+</div>
+</a>
+
+{% schema %}
+{
+    "name":  "Ingredientes-produto",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "title_img_i",
+          "label": "Titulo Principal"
+        },
+        {
+          "type": "text",
+          "id": "description_i",
+          "label": "Descrição"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "foodDesc",
+        "name": "Ingredientes",
+        "settings": [
+          {
+            "type": "text",
+            "id": "questionFAQ_m",
+            "label": "Título"
+          },
+          {
+            "type": "text",
+            "id": "answerFAQ_m",
+            "label": "Descrição"
+          }
+        ]
+      }
+    ],
+    "presets": [
+        {
+          "name": "Ingredientes Motivos",
+          "category": "imagem",
+          "blocks": [
+            {
+              "type": "foodDesc"
+            }
+          ]
+        }
+      ]
+}
+
+{% endschema %}

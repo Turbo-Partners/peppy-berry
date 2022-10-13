@@ -1,0 +1,262 @@
+
+{% style %}
+
+
+.general_i{
+  background-image: url({{ section.settings.background_i | image_url }});
+  background-size: cover;
+  background-position: center;
+  height: auto;
+}
+
+.banner__content_i{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner__content_i .InfosContainer{
+  width: 130rem;
+}
+
+.banner__content_i .InfosContainer .introInfoContent{
+    text-align: center;
+}
+
+.banner__content_i .InfosContainer .introInfoContent .sec2i{
+    font-size: 1.75rem;
+}
+
+.banner__content_i .InfosContainer .title_i{
+    height: 12rem;
+}
+
+.sec2i{
+  color: #fff;
+}
+
+.accordion-wrapper {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.accordion-item {
+    margin-bottom: 20px;
+    padding:20px;
+    border: 1px solid #d4e2ec;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 3px 7px 0 rgb(0 0 0 / 3%);
+
+    width: 34rem;
+    /* margin-left: 2rem; */
+    margin: 2rem auto;
+    height: fit-content;
+}
+
+.list-item-product{
+  list-style: none;
+  position: relative;
+  height: 40px;
+
+  
+}
+
+.accordion-item-content {
+    overflow: hidden;
+    display: none;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+.accordion-item-content p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.accordion-item-trigger {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: space-between;
+    height:10px;
+}
+
+.accordion-heading {
+    margin-top: 7px;
+    margin-bottom: 0px;
+    line-height: 15px;
+    cursor: pointer;
+    color: #612ca7;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+h4 {
+    
+    line-height: 24px;
+    margin-top: 10px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #612ca7;
+}
+
+.bold-text {
+    color: #612ca7;
+    font-size: 21px;
+    font-weight: 900;
+}
+
+b, strong {
+    font-weight: bold;
+}
+
+.accordion__content{
+  line-height: 20px;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.plus {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 32px;
+    line-height: 30px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.plus1{
+  transform: rotate(0deg);
+}
+
+.plus2{
+  transform: rotate(45deg);
+}
+
+.footer_i{
+  height: 0.7rem;
+  background-color: #c7d40d;
+}
+
+  @media screen and (max-width: 1050px){
+    .banner__content_i .InfosContainer .title_i{
+      height: 8rem;
+    }
+  }
+
+{% endstyle %}
+
+
+
+<div data-section-id="{{ section.background_i }}" class="general_i">
+    <div class="banner_i">
+      <div class="banner__content_i ">
+        <div class="InfosContainer">
+          <div class="introInfoContent">          
+            <p class="sec2i">FÓRMULA</p>
+            <img class="title_i" src="{{ section.settings.title_img_i | image_url }}" width="auto" height="auto" loading="lazy">
+            <p class="sec2i">{{ section.settings.description_i }}</p>
+          </div>
+          <div id="ingredientes" class="accordion-wrapper">
+            {% for block in section.blocks %}
+            <details id="Details-{{ block.id }}-{{ section.id }}" class="accordion-item">
+              <summary class="list-item-product">
+                <div class="accordion-item-trigger">
+                  <h2 class="accordion-heading">
+                    {{ block.settings.heading }}
+                  </h2>
+                  <p class="plus plus1" id="icon_product-{{ forloop.index }}" onClick="changeDesc({{ forloop.index }})" >+</p>
+                </div>
+                <script>
+                  function changeDesc(n) {
+                    var plus = "icon_product-" + n;
+                    var element = document.getElementById(plus);
+                    console.log(element);
+                    if(element.classList.contains("plus2")) {
+                      element.classList.remove("plus2");
+                      element.classList.add("plus1");
+                    } else{
+                      element.classList.add("plus2");
+                      element.classList.remove("plus1");
+                    }
+                  }
+                </script>
+              </summary>
+              <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+                {{ block.settings.content }}
+              </div>
+            </details>      
+            {% endfor %}
+          </div>
+        </div>
+</div>
+<hr class="footer_i" />
+
+{% schema %}
+{
+    "name":  "Quarta Section",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background_i",
+          "label": "Background"
+        },
+        {
+          "type": "image_picker",
+          "id": "title_img_i",
+          "label": "Titulo Principal"
+        },
+        {
+          "type": "text",
+          "id": "description_i",
+          "label": "Descrição"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "productDesc",
+        "name": "Ingredientes",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Título"
+          },
+          {
+            "type": "text",
+            "id": "content",
+            "label": "Descrição"
+          }
+        ]
+      }
+    ],
+    "presets": [
+        {
+          "name": "Ingredientes",
+          "category": "imagem",
+          "blocks": [
+            {
+              "type": "productDesc"
+            }
+          ]
+        }
+      ]
+}
+
+{% endschema %}

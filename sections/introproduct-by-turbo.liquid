@@ -1,0 +1,189 @@
+{% style %}
+.background-intro{
+    background-image: url({{ section.settings.background_intro | image_url }});
+    background-size: cover;
+    background-position: center;
+
+    height: 700px;
+}
+
+.container-contents{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-contents .title-intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 6rem;
+}
+
+.container-contents .title-intro .title{
+    color: #c7d40d;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.container-contents .title-intro .subtitle-i{
+    color: #fff;
+    font-size: 5rem;
+    font-weight: bold;
+
+    margin-top: -2.5rem;
+}
+
+.image-position img{
+    height: 60rem;
+
+    margin-top: -3rem;
+}
+
+.info_box_image{
+    position: absolute;
+    width: 21rem;
+    height: 10rem;
+    background-color: rgba(179, 125, 243, 0.61);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    border-radius: 2rem;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.info_box_image .iconfig{    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+    position: relative;
+    top: -20px;
+}
+
+.info_box_image p{
+    margin-top: -1rem;
+    padding: 0 1rem;
+
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.iconfig {
+    padding: 1rem;
+    background-color: #7937c6;
+    border-radius: 50%;
+}
+
+.one{
+    position: absolute;
+    left: 600px;
+    top: 1080px;
+}
+
+.two{
+    position: absolute;
+    left: 380px;
+    top: 1350px;
+}
+
+.three{
+    position: absolute;
+    left: 850px;
+    top: 1220px;
+}
+
+@media screen and (max-width: 1050px){
+    .one{
+        position: absolute;
+        left: 17px;
+        top: 1620px;
+    }
+
+    .two{
+        position: absolute;
+        left: 17px;
+        top: 1950px;
+    }
+
+    .three{
+        position: absolute;
+        left: 180px;
+        top: 1780px;
+    }
+
+    .container-contents .title-intro .title{
+        color: #c7d40d;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .container-contents .title-intro .subtitle-i{
+        color: #fff;
+        font-size: 3rem;
+        font-weight: bold;
+
+        text-align: center;
+        margin-top: 0.5rem;
+    }
+}
+
+{% endstyle %}
+
+<div class="background-intro">
+    <div class="container-contents">
+        <div class="title-intro">
+            <span class="title">RÁPIDO E FÁCIL</span>
+            <span class="subtitle-i">Rápido, Enérgico, Saudável e Super Delicioso!</span>
+        </div>
+        <div class="image-position">
+            <div class="info_box_image one">
+                <span class="iconfig">{% render 'bottle' %}</span>
+                <p><b>Contém 20 doses por unidade</b> (R$4,65 por dose)</p>
+            </div>
+            <div class="info_box_image two">
+                <span class="iconfig">{% render 'bottle' %}</span>
+                <p><b>Apenas 35 calorias e zero sódio!</b></p>
+            </div>
+            <div class="info_box_image three">
+                <span class="iconfig">{% render 'bottle' %}</span>
+                <p><b>Serve tanto para treino, dia a dia e trabalho!</b></p>
+            </div>
+            <img src="{{ section.settings.peppy_image_product | image_url }}" width="" height="" loading="lazy">
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Introdução",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+        "type": "image_picker",
+        "id": "background_intro",
+        "label": "Background"
+        },
+        {
+        "type": "image_picker",
+        "id": "peppy_image_product",
+        "label": "Foto do produto"
+        }
+    ],
+    "presets": [
+        {
+        "name": "Introdução",
+        "category": "imagem"
+        }
+    ]
+}
+{% endschema %}

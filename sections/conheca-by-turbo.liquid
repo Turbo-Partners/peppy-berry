@@ -1,0 +1,357 @@
+{% style %}
+
+html{
+  scroll-behavior: smooth
+}
+
+.generalC{
+    background-image: url({{ section.settings.backgroundc | image_url }});
+    background-size: cover;
+
+    
+}
+
+.bannerc{
+  height:auto;
+   
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2rem;
+
+  padding: 5rem;
+
+  transition: 0.7s ease-in-out;
+}
+
+
+.bannerc .banner__contentc{
+    width: 48rem;
+    margin-right: 10rem;
+    line-height: 1.5;   
+}
+
+
+.bannerc .banner__contentc .titlec{
+    height: 23rem;
+}
+
+.sec2{
+    color: #f1f1f1;
+    font-weight: 500;
+    font-size: 1.7rem;
+}
+
+.banner__contentc .bttnc{
+    position: relative;
+    left: -30px;
+    cursor: pointer;
+    height: 8rem;
+}
+
+.bttnc:hover{
+    height: 9rem;
+    transition: 0.5s ease-in-out;
+}
+
+.model1{
+    border-radius: 2rem;
+}
+
+.bannerc__{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10rem;
+
+    padding: 5rem;
+}
+
+.bannerc__ .banner__contentc__{
+    width: 48rem;
+    margin-right: 10rem;
+    line-height: 1.5;
+}
+
+.titlec_mobile, .bttnc_mobile, .banner__imgc_mobile, .banner__contentc__mobile{
+  display: none;
+}
+
+
+.model2{
+    border-radius: 2rem;
+}
+
+.bannerc__ .banner__contentc__ .titlec__{
+    height: 8rem;
+}
+
+.bannerc__ .banner__contentc__ .titlec__plus{
+    height: 10rem;
+}
+
+.sec2_mobile{
+  color: #fff;
+}
+
+.footerc__{
+    height: 0.7rem;
+    background-color: #60e2c9;
+    margin: 0;
+}
+
+  @media screen and (max-width: 1050px){
+    .generalC{
+      background-position: center;
+    }
+
+    .bannerc{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bannerc .banner__contentc{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      width: 27rem;
+
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .foto_mobile1, .foto_mobile2{
+      height: 20rem;
+
+      box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.500)
+    }
+
+    .foto_mobile1{
+      border-radius: 1rem 0 0 1rem;
+    }
+
+    .foto_mobile2{
+      border-radius: 0 1rem 1rem 0;
+    }
+
+    .bannerc .banner__imgc_mobile{
+      display: block;
+
+      display: flex;
+      flex-direction: row;
+    }
+
+    .bannerc .banner__contentc__{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      margin-right: 0rem;
+    }
+
+    .sec2{
+      text-align: start;
+      color: #fff;
+    }
+
+    .bannerc .bannerc__{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-right: 0rem;
+      width: 45rem;
+    }
+
+    .banner__contentc__mobile{
+      display: block;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      margin-top: -20px;
+    }
+
+    .banner__contentc__mobile .titlec__{
+      height: 4.5rem;
+    }
+
+    .banner__contentc__mobile .titlec__plus{
+      height: 6rem;
+    }
+
+    .sec2_mobile{
+      font-size: 1.5rem;
+      line-height: 1.5;
+      color: #fff;
+    }
+
+    .content__cplus__ p{
+      font-size: 1.7rem;
+      line-height: 1.5;
+      text-align: start;
+      color: #fff;
+    }
+
+    .titlec_mobile{
+      display: block;
+      height: 15rem;
+    }
+
+    .bttnc_mobile{
+      display: block;
+      height: 10rem;
+    }
+
+    .titlec, .bttnc, .banner__imgc, .banner__imgc__, .banner__contentc__{
+      display: none;
+    }
+  }
+
+{% endstyle %}
+
+<a name="conheca">
+  <div data-section-id="{{ section.backgroundc }}" class="generalC">
+      <div class="bannerc">
+        <div class="banner__contentc">
+          <p class="sec2">CONHEÇA</p>
+          <img class="titlec" src="{{ section.settings.title_imgc | image_url }}" width="auto" height="auto" loading="lazy">
+          <img class="titlec_mobile" src="{{ section.settings.title_imgc | image_url }}" width="auto" height="auto" loading="lazy">
+          <p class="sec2">{{ section.settings.descriptionc }}</p>
+          <p class="sec2">{{ section.settings.descriptioncplus }}</p>
+          <a href="{{ section.settings.button_urlc }}"><img class="bttnc" src="{{ section.settings.button__imagec | image_url }}" width="" height="" loading="lazy"></a>
+          <a href="{{ section.settings.button_urlc }}" class="bttnc_mobile"><img class="bttnc_mobile" src="{{ section.settings.button__imagec | image_url }}" width="" height="" loading="lazy"></a>
+        </div>
+        <div class="banner__imgc">
+          <img class="model1" src="{{ section.settings.banner_imgc | image_url }}" width="auto" height="700" loading="lazy">
+        </div>
+        <div class="banner__imgc_mobile">
+          <img class="foto_mobile1" src="{{ section.settings.banner_imgc | image_url }}" width="auto" height="700" loading="lazy">
+          <img class="foto_mobile2" src="{{ section.settings.banner_imgb2 | image_url }}" width="" height="600" loading="lazy">
+        </div>
+      </div>
+      {% comment %} second part  {% endcomment %}
+      <div class="bannerc__">
+          {% comment %} model {% endcomment %}
+          <div class="banner__imgc__">
+            <img class="model2" src="{{ section.settings.banner_imgb2 | image_url }}" width="" height="600" loading="lazy">
+          </div>
+          {% comment %} content-desktop {% endcomment %}
+        <div class="banner__contentc__">
+          <div class="content__cplus">
+              <img class="titlec__" src="{{ section.settings.title_imgb2 | image_url }}" width="auto" height="auto" loading="lazy">
+              <p class="sec2_mobile">{{ section.settings.descriptionb2 }}</p>
+              <p class="sec2_mobile"><b> {{ section.settings.descriptioncplusb2 }}</b></p>
+          </div>
+          <div class="content__cplus++">
+              <img class="titlec__plus" src="{{ section.settings.title_imgb2_desc | image_url }}" width="auto" height="auto" loading="lazy">
+              <p class="sec2_mobile">{{ section.settings.descriptionb2_desc }}</p>
+          </div>
+        </div>
+        {% comment %} content-mobile {% endcomment %}
+        <div class="banner__contentc__mobile">
+          <div class="content__cplus">
+              <img class="titlec__" src="{{ section.settings.title_imgb2 | image_url }}" width="auto" height="auto" loading="lazy">
+              <p class="sec2">{{ section.settings.descriptionb2 }}</p>
+              <p class="sec2"><b> {{ section.settings.descriptioncplusb2 }}</b></p>
+          </div>
+          <div class="content__cplus__">
+              <img class="titlec__plus" src="{{ section.settings.title_imgb2_desc | image_url }}" width="auto" height="auto" loading="lazy">
+              <p>{{ section.settings.descriptionb2_desc }}</p>
+          </div>
+        </div>
+      </div>
+    <div class="footerc__"> </div>
+  </div>
+</a>
+  
+  
+  {% schema %}
+    {
+      "name":  "Segunda Section",
+      "tag": "section",
+      "class": "section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "backgroundc",
+          "label": "Background"
+        },
+        {
+          "type": "image_picker",
+          "id": "title_imgc",
+          "label": "Titulo Principal"
+        },
+        {
+          "type": "text",
+          "id": "descriptionc",
+          "label": "Descrição"
+        },
+        {
+          "type": "text",
+          "id": "descriptioncplus",
+          "label": "Descrição +"
+        },
+        {
+          "type": "url",
+          "id": "button_urlc",
+          "label": "Link do Botao"
+        },
+        {
+          "type": "image_picker",
+          "id": "button__imagec",
+          "label": "Buyer button"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_imgc",
+          "label": "Imagem Lateral 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_imgb2",
+          "label": "Imagem Lateral 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "title_imgb2",
+          "label": "Titulo Img 1"
+        },
+        {
+            "type": "text",
+            "id": "descriptionb2",
+            "label": "Descrição +"
+        },
+        {
+            "type": "text",
+            "id": "descriptioncplusb2",
+            "label": "Descrição ++"
+        },
+        {
+            "type": "image_picker",
+            "id": "title_imgb2_desc",
+            "label": "Titulo Img 2"
+        },
+        {
+            "type": "text",
+            "id": "descriptionb2_desc",
+            "label": "Descrição ++"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Conheça",
+          "category": "imagem"
+        }
+      ]
+    }
+  {% endschema %}

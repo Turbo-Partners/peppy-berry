@@ -1,0 +1,149 @@
+{% style %}
+.background-m{
+    background-color: #c7d40d;
+    background-size: cover;
+
+    margin-top: -7rem;
+}
+
+.container-contents-m{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5rem;
+    gap: 8rem;
+}
+
+.container-contents-m .thumb-videos-m{
+    display: flex;
+    flex-direction: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5rem;
+}
+
+.container-contents-m .thumb-videos-m .thumb-box-m{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    /* background-color: red; */
+
+    height: 50rem;
+    width: 30rem;
+    
+    line-height:1.4;
+}
+
+.container-contents-m .thumb-videos-m .thumb-box-m video{
+    width: 30rem;
+    height: 30rem;
+    object-fit: cover;
+    
+    border-radius: 2rem;
+}
+
+.title-m-box{
+    margin-top: 10rem;
+}
+
+.title-m{
+    font-size: 3.5rem;
+    color: #683f66;
+    font-weight: bold;
+
+}
+
+.thumb-videos-m span{
+    color: #c7d40d;
+    font-size: 1.7rem;
+    font-weight: bold;
+
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.thumb-videos-m p{
+    color: #000;
+    font-weight: 300;
+
+    margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 1050px){
+    .container-contents-m .thumb-videos-m{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        gap: 0rem;
+    }
+
+    .title-m{
+        font-size: 3rem;
+        line-height: 1.4;
+    }
+}
+
+{% endstyle %}
+
+<div class="background-m">
+    <div class="container-contents-m">
+        <div class= "title-m-box">
+            <span class="title-m">3 Motivos que estão fazendo as pessoas amarem o Pré-Move</span>
+        </div>
+        <div class="thumb-videos-m">
+            <div class="thumb-box-m">
+                <video autoplay="true" muted loop id="video-by-turbo__video">
+                    <source type="video/mp4" src="{{ 'Untitled-transcode.mp4' | asset_url }}">
+                </video>
+                <span style="color: #93286e">MOTIVO #1</span>
+                <span style="color: #000; font-size: 2.5rem;">Energia e Disposição</span>
+                <p>Tchau, procrastinação. Alô, produtividade! 👋
+                Seu melhor amigo no dia a dia.</p>   
+            </div>
+            <div class="thumb-box-m">
+                <video autoplay="true" muted loop id="video-by-turbo__video">
+                    <source type="video/mp4" src="{{ '3_razoes_2_editado-transcode.mp4' | asset_url }}">
+                </video>
+                <span style="color: #93286e">MOTIVO #2</span>
+                <span style="color: #000; font-size: 2.5rem;">100% natural</span>
+                <p>Ingredientes naturais e plant based. Tenha energia e disposição com ingredientes saúdaveis! O pré move conta com: Polpa de açaí, pimenta vermelha e gengibre.</p>   
+            </div>
+            <div class="thumb-box-m">
+                <video autoplay="true" muted loop id="video-by-turbo__video">
+                    <source type="video/mp4" src="{{ '3_razoes_3_editado-transcode.mp4' | asset_url }}">
+                </video>
+                <span style="color: #93286e">MOTIVO #3</span>
+                <span style="color: #000; font-size: 2.5rem;">Rápido preparo</span>
+                <p>Prepare o seu pré move em menos de 1 minuto! Agilidade no preparo e disposição para o seu dia a dia!</p>   
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Motivos Peppy",
+    "tag": "section",
+    "class": "section",
+    "settings": [
+        {
+        "type": "image_picker",
+        "id": "background-mp",
+        "label": "Background"
+        }
+    ],
+    "presets": [
+        {
+        "name": "Motivos",
+        "category": "imagem"
+        }
+    ]
+}
+{% endschema %}

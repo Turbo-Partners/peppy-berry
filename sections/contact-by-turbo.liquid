@@ -1,0 +1,186 @@
+<style>
+    .background-contact{
+        background-color: #452683;
+        background-size: cover;
+
+        padding: 7rem;
+        height: 800px;
+
+        margin-top: -130px;
+    }
+
+    .contact-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        margin-top: 10rem;
+    }
+
+    .contact-container .contact_title span {
+        font-size: 5rem;
+        font-weight: bold;
+        color: #c7d40d;
+    }
+
+    .contact-container .form_box-content{
+        display: flex;
+        flex-direction: column;
+
+        margin-top: 1rem;
+    }
+
+    .contact-container .form_box-content .form-box{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    .contact-container .form_box-content .form-box label{
+        font-weight: bold;
+        font-size: 1.7rem;
+        color: #fff;
+    }
+
+    .contact-container .form_box-content .form-box input, textarea{
+        width: 50rem;
+
+        padding: 1.2rem;
+    }
+
+    .contact-container .form_box-content .form-box input::placeholder, textarea::placeholder{
+        font-size: 1.5rem;
+    }
+
+    textarea:focus, input:focus {
+        box-shadow: 0 0 0 0;
+        outline: 0;
+        border: 0;
+    }
+
+    .contact-container .form_box-content .submit{
+        text-align: center;
+    }
+
+    .contact-container .form_box-content .submit input{
+        padding: 1rem;
+        margin-top: 1rem;
+        cursor: pointer;
+
+        width: 40rem;
+
+        border-radius: 2rem;
+        border: none;
+        background-color: #c7d40d;
+
+        margin-top: 2rem;
+    }
+
+    .contact-container .form_box-content .submit input:hover{
+        box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.500);
+        transition: 0.5s ease-in-out;
+    }
+
+    .contact-container .form_box-content .submit input[type="submit" i] {
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .ponto{
+        color: red;
+    }
+
+    .email{
+        margin-top: 2rem;
+    }
+
+    .message{
+        margin-top: 2rem;
+    }
+
+    .c_subtitle{
+        color: #fff; 
+        font-weight: bold; 
+        font-size: 3.5rem;
+    }
+
+    @media screen and (max-width: 1050px){
+        .background-contact{
+            padding: 0rem;
+            height: auto;
+    
+            margin-top: -200px;
+        }
+
+        .contact-container{
+            padding: 2rem;
+        }
+
+        .contact-container .contact_subtitle{
+            text-align: center;
+        }
+
+        .contact-container .contact_title{
+            margin-top: 20rem;
+        }
+    
+        .contact-container .contact_title span {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #c7d40d;
+        }
+
+        .contact-container .c_subtitle{
+            font-size: 3rem;
+        }
+
+        .contact-container .form_box-content{
+            margin: 0 auto;
+        }
+
+        .contact-container .form_box-content .form-box input, textarea{
+            width: 35rem;
+            border-radius: 1rem;
+        }
+
+        .contact-container .form_box-content .submit input{
+            width: 30rem;
+        }
+        
+    }
+</style>
+<div class="background-contact">
+    <div class="contact-container" >
+        <div class="contact_title">
+            <span>Fale conosco!</span>
+        </div>
+        <div class="contact_subtitle">
+            <span class="c_subtitle" >Preencha o formulário abaixo para entrar em contato:</span>
+        </div>
+        <div class="form_box-content">
+            {% form 'contact' %}
+                {{ form.errors | default_errors }}
+
+                <div class="first-name form-box">
+                  <label for="first-name">Nome<b class="ponto">*</b></label>
+                  <input type="text" name="contact[first_name]" id="first-name" placeholder="Digite seu nome..." required/>
+                </div>
+
+                <div class="email form-box">
+                  <label for="email">E-mail<b class="ponto">*</b></label>
+                  <input type="email" name="contact[email]" id="email" placeholder="Digite seu e-mail..." required/>
+                </div>
+
+                <div class="message form-box">
+                  <label for="message">Mensagem<b class="ponto">*</b></label>
+                  <textarea name="contact[body]" id="message" placeholder="Comente sobre o que gostaria de falar conosco!"></textarea>
+                </div>
+              
+                <div class="submit">
+                  <input type="submit" value="ENVIAR" placeholder="ENVIAR" />
+                </div>
+            {% endform %}
+          </div>
+    </div>
+</div>
